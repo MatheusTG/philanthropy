@@ -12,6 +12,7 @@ lerna-debug.log*
 
 node_modules
 dist
+staticfiles
 dist-ssr
 *.local
 

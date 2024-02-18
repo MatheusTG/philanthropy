@@ -1,4 +1,4 @@
-{% load render_vite_bundle %}
+{% load render_vite_bundle %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,12 +13,12 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">{% static '.vite/manifest.json' %}</div>
 
     {% if debug %}
     <!-- Este URL será diferente para cada tipo de aplicativo. 
     Aponte para o seu arquivo js principal. -->
-    <script type="module" src="http://localhost:5173/src/main.ts"></script>
+    <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
     {% else %} {% render_vite_bundle %} {% endif %}
   </body>
 </html>
