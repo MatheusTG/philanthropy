@@ -1,0 +1,24 @@
+{% load render_vite_bundle %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+    {% if debug %}
+    <link rel="stylesheet" href="http://localhost:5173/src/css/style.css" />
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    {% endif %}
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    {% if debug %}
+    <!-- Este URL será diferente para cada tipo de aplicativo. 
+    Aponte para o seu arquivo js principal. -->
+    <script type="module" src="http://localhost:5173/src/main.ts"></script>
+    {% else %} {% render_vite_bundle %} {% endif %}
+  </body>
+</html>

@@ -1,3 +1,6 @@
+# local_settings
+cassino/local_settings.py
+
 # Logs
 logs
 *.log
@@ -22,3 +25,33 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+.venv3/
+.env3/
+.python-version
+.pyenv
+pip-wheel-metadata/
+
+# Django
+*.sqlite3
+*.pyc
+*.pyo
+db.sqlite3
+db.sqlite3-journal
+*.pyc
+*.pyo
+
+# Media files
+media/
