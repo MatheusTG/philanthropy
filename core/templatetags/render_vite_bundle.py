@@ -29,12 +29,13 @@ def render_vite_bundle():
   finally:
     fd.close()
 
-  imports_files = "".join(
-    [
-      f'<script type="module" src="/static/{manifest[file]["file"]}"></script>'
-        for file in manifest
-    ]
-  )
+  imports_files = ''
+  for file in manifest:
+    for extension in ['.jpg', '.png', '.svg', '.ico']:
+      if extension in file:
+        break
+    else:
+      imports_files += f'<script type="module" src="/static/{manifest[file]["file"]}"></script>'
 
   if 'css' in manifest['index.html']:
     css_file_name = manifest['index.html']['css'][0]

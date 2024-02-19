@@ -13,11 +13,9 @@
   </head>
 
   <body>
-    <div id="root">{% static '.vite/manifest.json' %}</div>
+    <div id="root"></div>
 
     {% if debug %}
-    <!-- Este URL será diferente para cada tipo de aplicativo. 
-    Aponte para o seu arquivo js principal. -->
     <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
     {% else %} {% render_vite_bundle %} {% endif %}
   </body>
