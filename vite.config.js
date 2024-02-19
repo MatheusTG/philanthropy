@@ -6,6 +6,6 @@ export default defineConfig({
     manifest: true,
     assetsInclude: ['images', 'favicon.ico'],
   },
-  base: process.env.mode === "production" ? "/static/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/static/" : "/",
   root: ".",
 });
