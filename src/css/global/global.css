@@ -1,0 +1,64 @@
+:root {
+  /* Core Primárias */
+  --cor-p32-03: #097a0f;
+  --cor-p32-02: #006300;
+  --cor-p32-01: #097a07;
+
+  /* Cores (Tons de cinza) */
+  --cor12: #000000;
+  --cor11: #121212;
+  --cor10: #2e2e2e;
+  --cor09: #404040;
+  --cor08: #595959;
+  --cor07: #707070;
+  --cor06: #9c9c9c;
+  --cor05: #b2b2b2;
+  --cor04: #cccccc;
+  --cor03: #dedede;
+  --cor02: #ededed;
+  --cor01: #f7f7f7;
+  --cor00: #ffffff;
+
+  /* Tipografia */
+  --font-barlow: "Barlow";
+  --font-IBM: "IBM Plex Mono";
+
+  /* Tipografias prontas */
+  --font-paragrafo: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
+  --font-medium: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
+  --font-titulo-large: bold 4rem/1.125 var(--font-barlow), sans-serif;
+  --font-titulo-medium: bold 3rem/1.125 var(--font-barlow), sans-serif;
+
+  /* Espaçamentos */
+  --spacing-small01: 0.25rem; /* 4px */
+  --spacing-small02: 0.5rem; /* 8px */
+  --spacing-small03: 0.75rem; /* 12px */
+  --spacing-small04: 1rem; /* 16px */
+  --spacing-small05: 1.25rem; /* 20px */
+  --spacing-small06: 1.5rem; /* 24px */
+  --spacing-medium01: 2rem; /* 32px */
+  --spacing-medium02: 2.25rem; /* 36px */
+  --spacing-medium03: 2.5rem; /* 40px */
+  --spacing-medium04: 3rem; /* 48px */
+  --spacing-medium05: 3.75rem; /* 60px */
+  --spacing-medium06: 4.5rem; /* 72px */
+  --spacing-large01: 5rem; /* 80px */
+  --spacing-large02: 7.5rem; /* 120px */
+  --spacing-large03: 10rem; /* 160px */
+  --spacing-large04: 12.5rem; /* 200px */
+  --spacing-large04: 15rem; /* 240px */
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
