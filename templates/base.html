@@ -6,8 +6,12 @@
   </head>
 
   <body>
-    {% block content %}{% endblock %} {% if debug %}
-    <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
-    {% else %} {% render_vite_bundle %} {% endif %}
+    {% block content %}{% endblock %}
+
+    {% if debug %}
+      <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
+    {% else %}
+      {% render_vite_bundle %}
+    {% endif %}
   </body>
 </html>

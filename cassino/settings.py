@@ -122,6 +122,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
   BASE_DIR / "dist",
+  BASE_DIR / "src/img",
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
