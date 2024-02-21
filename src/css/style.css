@@ -1,2 +1,6 @@
 /* global */
 @import "./global/global.css";
+
+/* home */
+@import "./home/header.css";
+@import "./home/slides.css";

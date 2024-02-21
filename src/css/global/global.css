@@ -24,10 +24,7 @@
   --font-IBM: "IBM Plex Mono";
 
   /* Tipografias prontas */
-  --font-paragrafo: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
   --font-medium: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
-  --font-titulo-large: bold 4rem/1.125 var(--font-barlow), sans-serif;
-  --font-titulo-medium: bold 3rem/1.125 var(--font-barlow), sans-serif;
 
   /* Espaçamentos */
   --spacing-small01: 0.25rem; /* 4px */
@@ -61,4 +58,44 @@ img {
 
 ul {
   list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 600px 600px 1fr;
+}
+
+.titulo {
+  font-weight: bold;
+  line-height: 1.125;
+  font-family: var(--font-barlow), sans-serif;
+}
+
+.titulo-large {
+  font-size: 4rem;
+}
+
+.titulo-medium {
+  font-size: 3rem;
+}
+
+.titulo-container .titulo {
+  margin-bottom: 12px;
+}
+
+.titulo-paragrafo {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-family: var(--font-barlow), sans-serif;
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.redes img {
+  width: 40px;
 }

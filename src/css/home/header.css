@@ -1,0 +1,87 @@
+/* Containers */
+.header-slides-container {
+  background-color: var(--cor12);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-column: 2;
+  padding: var(--spacing-large01) var(--spacing-small05);
+}
+
+/* Navegação */
+.menu-container {
+  grid-column: 1;
+  display: flex;
+  align-items: end;
+  gap: var(--spacing-small06);
+  margin-bottom: var(--spacing-small06);
+}
+
+.logo {
+  width: 64px;
+}
+
+.menu-perfil-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small06);
+}
+
+.login-cadastro {
+  margin-left: auto;
+  display: flex;
+  gap: var(--spacing-small05);
+}
+
+.login-cadastro a {
+  font-weight: 500;
+  font-size: 1.125rem;
+  font-family: var(--font-barlow);
+  color: var(--cor05);
+  text-decoration: none;
+}
+
+.header .titulo {
+  grid-column: 1;
+  margin-bottom: 12px;
+}
+
+.header .titulo-paragrafo {
+  grid-column: 1/-1;
+}
+
+.header .titulo {
+  color: white;
+}
+
+.header .titulo-paragrafo {
+  color: var(--cor05);
+  margin-bottom: var(--spacing-medium01);
+}
+
+/* Redes sociais e turmas */
+.redes-turmas-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid var(--cor03);
+  padding-top: 20px;
+}
+
+.turmas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.turmas button {
+  background-color: transparent;
+  border: none;
+  color: var(--cor07);
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-family: var(--font-barlow);
+  letter-spacing: 1px;
+}

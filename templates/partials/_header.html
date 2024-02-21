@@ -1,23 +1,24 @@
 {% load static %}
-<ul class="menu-container">
-  <li class="logo">
-    <img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz">
-  </li>
-  <li class="menu-icone">
-    <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
-  </li>
-  <li class="perfil">
-    <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
-  </li>
-  <li>
-    <img src="{% static 'icones/icone-podio.svg' %}" alt="Podio">
-  </li>
-</ul>
+<nav class="menu-container">
+  <div class="logo">
+    <a href="#"><img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz"></a>
+  </div>
+  <div class="menu-perfil-container">
+    <div>
+      <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
+    </div>
+    <div>
+      <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
+    </div>
+  </div>
+  <div class="login-cadastro">
+    <div class="login"><a href="#">Login</a></div>
+    <div class="cadastro"><a href="#">Cadastro</a></div>
+  </div>
+</nav>
 
-<div class="titulo-container">
-  <h1 class="titulo titulo-1">Conheça a M33</h1>
-  <p class="titulo-paragrafo">Os alunos do técnico da UTFPR são reponsáveis todos os anos por uns dos maiores eventos de filantriopia de Campo Mourão.</p>
-</div>
+<h1 class="titulo titulo-large">Conheça a M33</h1>
+<p class="titulo-paragrafo">Os alunos do técnico da UTFPR são reponsáveis todos os anos por uns dos maiores eventos de filantriopia de Campo Mourão.</p>
 
 <div class="redes-turmas-container">
   <ul class="redes">
