@@ -1,6 +1,32 @@
 /* Containers */
 .header-slides-container {
   background-color: var(--cor12);
+  position: relative;
+  z-index: 1;
+}
+
+/* Códigos fundo header */
+.header-slides-container::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-image: url("../../img/backgrounds/codigos-matriz.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.2;
+  box-shadow: inset -50px 0px 80px black;
+}
+
+/* Imagem da turma */
+.background-header {
+  grid-column: 3/-1;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  opacity: 0.5;
+  width: 105%;
+  z-index: -1;
 }
 
 .header {
