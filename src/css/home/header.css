@@ -1,6 +1,6 @@
 /* Containers */
 .header-slides-container {
-  background-color: var(--cor12);
+  background-color: var(--color12);
   position: relative;
   z-index: 1;
 }
@@ -12,7 +12,7 @@
   width: 50%;
   height: 100%;
   background-image: url("../../img/backgrounds/codigos-matriz.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   z-index: -1;
   opacity: 0.2;
   box-shadow: inset -50px 0px 80px black;
@@ -26,13 +26,14 @@
   left: -5%;
   opacity: 0.5;
   width: 105%;
+  height: 100%;
   z-index: -1;
 }
 
 .header {
+  grid-column: 2;
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-column: 2;
   padding: var(--spacing-large01) var(--spacing-small05);
 }
 
@@ -65,17 +66,13 @@
   font-weight: 500;
   font-size: 1.125rem;
   font-family: var(--font-barlow);
-  color: var(--cor05);
+  color: var(--color05);
   text-decoration: none;
 }
 
 .header .titulo {
   grid-column: 1;
-  margin-bottom: 12px;
-}
-
-.header .titulo-paragrafo {
-  grid-column: 1/-1;
+  margin-bottom: var(--spacing-small03);
 }
 
 .header .titulo {
@@ -83,31 +80,30 @@
 }
 
 .header .titulo-paragrafo {
-  color: var(--cor05);
+  grid-column: 1/-1;
+  color: var(--color05);
   margin-bottom: var(--spacing-medium01);
+  max-width: 52ch;
 }
 
 /* Redes sociais e turmas */
 .redes-turmas-container {
   display: flex;
   justify-content: space-between;
-  border-top: 2px solid var(--cor03);
-  padding-top: 20px;
+  border-top: 2px solid var(--color03);
+  padding-top: var(--spacing-small05);
 }
 
 .turmas {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--spacing-small05);
 }
 
 .turmas button {
   background-color: transparent;
   border: none;
-  color: var(--cor07);
-  font-weight: bold;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  font-family: var(--font-barlow);
+  color: var(--color07);
+  font: var(--font-small-bold);
   letter-spacing: 1px;
 }

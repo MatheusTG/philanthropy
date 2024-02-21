@@ -1,30 +1,35 @@
 :root {
-  /* Core Primárias */
-  --cor-p32-03: #097a0f;
-  --cor-p32-02: #006300;
-  --cor-p32-01: #097a07;
+  /* Cores Primárias */
+  --color-p32-03: #002400;
+  --color-p32-02: #006300;
+  --color-p32-01: #097a07;
 
   /* Cores (Tons de cinza) */
-  --cor12: #000000;
-  --cor11: #121212;
-  --cor10: #2e2e2e;
-  --cor09: #404040;
-  --cor08: #595959;
-  --cor07: #707070;
-  --cor06: #9c9c9c;
-  --cor05: #b2b2b2;
-  --cor04: #cccccc;
-  --cor03: #dedede;
-  --cor02: #ededed;
-  --cor01: #f7f7f7;
-  --cor00: #ffffff;
+  --color12: #000000;
+  --color11: #121212;
+  --color10: #2e2e2e;
+  --color09: #404040;
+  --color08: #595959;
+  --color07: #707070;
+  --color06: #9c9c9c;
+  --color05: #b2b2b2;
+  --color04: #cccccc;
+  --color03: #dedede;
+  --color02: #ededed;
+  --color01: #f7f7f7;
+  --color00: #ffffff;
 
   /* Tipografia */
   --font-barlow: "Barlow";
   --font-IBM: "IBM Plex Mono";
 
   /* Tipografias prontas */
-  --font-medium: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
+  --font-small-bold: bold 1.125rem/1.5 var(--font-barlow), sans-serif;
+  --font-medium-bold: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
+
+  /* Border radius */
+  --border-radius-large: 1.25rem; /* 20px */
+  --border-radius-medium: 0.5rem; /* 8px */
 
   /* Espaçamentos */
   --spacing-small01: 0.25rem; /* 4px */
@@ -62,7 +67,11 @@ ul {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 600px 600px 1fr;
+  grid-template-columns:
+    minmax(40px, 10vw)
+    minmax(400px, 45vw)
+    minmax(400px, 45vw)
+    minmax(40px, 10vw);
 }
 
 .titulo {

@@ -1,3 +1,138 @@
 .slides-container {
   grid-column: 1/-1;
+  color: white;
+  overflow: hidden;
+  padding-top: var(--spacing-medium03);
+  margin-bottom: 200px;
+}
+
+.slides {
+  display: flex;
+  gap: var(--spacing-large01);
+  transform: translate3d(-00px, 0, 0);
+}
+
+.slide-item {
+  box-sizing: border-box;
+  display: grid;
+  align-content: end;
+  flex-shrink: 0;
+  padding: 60px;
+  border: 10px solid var(--color11);
+  border-radius: var(--border-radius-large);
+  width: 50vw;
+  max-width: 800px;
+  height: calc(50vw * 0.6);
+  max-height: 480px;
+  position: relative;
+}
+
+.slide-item .titulo-container {
+  margin-bottom: var(--spacing-small06);
+}
+
+.slide-item .titulo-paragrafo {
+  max-width: 50ch;
+}
+
+.slides .button-texto-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small05);
+}
+
+.slide-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small03);
+  border-radius: var(--border-radius-medium);
+  background-color: transparent;
+  border: 2px solid var(--color-p32-01);
+  color: var(--color00);
+  font: var(--font-medium-bold);
+  padding: var(--spacing-small02) var(--spacing-small05);
+}
+
+.slide-button img {
+  width: 32px;
+}
+
+.slide-sangue .slide-button {
+  background-color: var(--color00);
+  color: var(--color12);
+  border: none;
+  padding: var(--spacing-small01) var(--spacing-small05);
+  padding-right: var(--spacing-small06);
+}
+
+.slides .slide-texto-motivacional {
+  font: var(--font-small-bold);
+  color: var(--color07);
+  max-width: 24ch;
+}
+
+.slide-alimento .texto-apoio {
+  font: var(--font-small-bold);
+  margin-bottom: var(--spacing-small03);
+}
+
+.slide-sangue .slide-equipe-container {
+  font-size: 1rem;
+  font-family: var(--font-barlow);
+  line-height: 1.5;
+  color: var(--color06);
+  letter-spacing: 0.5px;
+  background-color: var(--color11);
+  padding: 4px var(--spacing-small04) 8px var(--spacing-small03);
+  border-radius: var(--border-radius-medium);
+  margin-bottom: var(--spacing-small03);
+  width: max-content;
+}
+
+.slide-sangue .slide-equipe {
+  position: relative;
+  color: var(--color00);
+}
+
+.slide-sangue .slide-equipe::before {
+  content: "";
+  display: inline-block;
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0px;
+}
+
+.slide-item::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--color11);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.slide-medula::before {
+  background-image: url("../../img/slides/slide-medula.jpg");
+}
+
+.slide-alimento::before {
+  background-image: url("../../img/slides/slide-alimento.jpg");
+}
+
+.slide-lacres::before {
+  background-image: url("../../img/slides/slide-lacres.jpg");
+}
+
+.slide-sangue::before {
+  background-image: url("../../img/slides/slide-sangue.jpg");
+}
+
+.slide-cabelo::before {
+  background-image: url("../../img/slides/slide-cabelo.jpg");
 }
