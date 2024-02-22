@@ -7,6 +7,11 @@ export default class Slide {
     movement: number; // Movimento total do mouse pós clique
     currentPosition: number; // Translate atual do slide
   };
+
+  slideArray: {
+    element: HTMLElement;
+    position: number;
+  }[];
   constructor(container: string, slide: string) {
     this.container = document.querySelector(container);
     this.slide = document.querySelector(slide);
@@ -16,6 +21,31 @@ export default class Slide {
       movement: 0,
       currentPosition: 0,
     };
+
+    this.slideArray = [];
+  }
+
+  findSlidePosition() {
+    if (this.slide) {
+      const slides = Array.from(this.slide.children);
+
+      slides.forEach((element) => {
+        if (element instanceof HTMLElement) {
+          const slideMargin =
+            (document.documentElement.clientWidth - element.offsetWidth) / 2;
+          this.slideArray.push({
+            element,
+            position: slideMargin + element.offsetLeft * -1,
+          });
+        }
+      });
+    }
+  }
+
+  changeSlide(index: number) {
+    const position = this.slideArray[index - 1].position;
+    this.moveSlide(position);
+    this.dataSlideMove.currentPosition = position;
   }
 
   moveSlide(distX: number) {
@@ -49,8 +79,7 @@ export default class Slide {
   }
 
   onEnd(event: Event) {
-
-    this.dataSlideMove.currentPosition += this.dataSlideMove.movement
+    this.dataSlideMove.currentPosition += this.dataSlideMove.movement;
 
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
     this.container?.removeEventListener(eventType, this.onMove);
@@ -72,5 +101,7 @@ export default class Slide {
   init() {
     this.bindEvents();
     this.addSlideEvents();
+    this.findSlidePosition();
+    this.changeSlide(3);
   }
 }
