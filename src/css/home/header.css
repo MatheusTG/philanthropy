@@ -108,6 +108,10 @@
   letter-spacing: 1px;
 }
 
+.turmas-form {
+  display: none;
+}
+
 /* Media queries */
 @media (max-width: 1000px) {
   .header-slide-container::before {
@@ -136,20 +140,27 @@
   .header .login-cadastro {
     display: none;
   }
+
+  .header .turmas {
+    display: block;
+  }
   .header .turmas button {
-    padding: var(--spacing-small01) var(--spacing-small03);
+    padding: var(--spacing-small02) var(--spacing-small04);
     background-color: var(--color10);
     border-radius: var(--border-radius-medium);
   }
-  .header .turmas button {
+  .header .turmas li {
     display: none;
   }
-  .header .turmas button.active {
+  .header .turmas li.active {
+    display: block;
+  }
+  .header .turmas li.active button {
     display: flex;
     align-items: center;
     gap: var(--spacing-small02);
   }
-  .header .turmas button.active::after {
+  .header .turmas li.active button::after {
     content: '';
     display: inline-block;
     width: 10px;
