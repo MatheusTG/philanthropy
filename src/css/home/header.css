@@ -7,11 +7,11 @@
 
 /* Códigos fundo header */
 .header-slides-container::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 50%;
   height: 100%;
-  background-image: url("../../img/backgrounds/codigos-matriz.jpg");
+  background-image: url('../../img/backgrounds/codigos-matriz.jpg');
   background-repeat: repeat-x;
   z-index: -1;
   opacity: 0.2;
@@ -47,7 +47,7 @@
 }
 
 .logo {
-  width: 64px;
+  width: 4rem;
 }
 
 .menu-perfil-container {
@@ -56,13 +56,13 @@
   gap: var(--spacing-small06);
 }
 
-.login-cadastro {
+.header .login-cadastro {
   margin-left: auto;
   display: flex;
   gap: var(--spacing-small05);
 }
 
-.login-cadastro a {
+.header .login-cadastro a {
   font-weight: 500;
   font-size: 1.125rem;
   font-family: var(--font-barlow);
@@ -106,4 +106,56 @@
   color: var(--color07);
   font: var(--font-small-bold);
   letter-spacing: 1px;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+  .header-slides-container::before {
+    display: none;
+  }
+  .header {
+    padding: var(--spacing-medium05);
+  }
+  .background-header {
+    grid-column: 1/-1;
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    display: block;
+    padding: var(--spacing-small05);
+  }
+  .header .menu-perfil-container {
+    margin-left: auto;
+  }
+  .header-menu {
+    order: 1;
+  }
+  .header .login-cadastro {
+    display: none;
+  }
+  .header .turmas button {
+    padding: var(--spacing-small01) var(--spacing-small03);
+    background-color: var(--color10);
+    border-radius: var(--border-radius-medium);
+  }
+  .header .turmas button {
+    display: none;
+  }
+  .header .turmas button.active {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small02);
+  }
+  .header .turmas button.active::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url('../../img/icones/icone-seta.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
