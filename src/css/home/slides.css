@@ -8,7 +8,6 @@
 .slide {
   display: flex;
   gap: var(--spacing-large01);
-  transform: translate3d(-0px, 0, 0);
 }
 
 .slide-item {
