@@ -1,12 +1,12 @@
 /* Containers */
-.header-slides-container {
+.header-slide-container {
   background-color: var(--color12);
   position: relative;
   z-index: 1;
 }
 
 /* Códigos fundo header */
-.header-slides-container::before {
+.header-slide-container::before {
   content: '';
   position: absolute;
   width: 50%;
@@ -110,7 +110,7 @@
 
 /* Media queries */
 @media (max-width: 1000px) {
-  .header-slides-container::before {
+  .header-slide-container::before {
     display: none;
   }
   .header {

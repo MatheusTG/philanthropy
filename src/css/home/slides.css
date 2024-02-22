@@ -1,11 +1,11 @@
-.slides-container {
+.slide-container {
   grid-column: 1/-1;
   color: white;
   overflow: hidden;
   padding: var(--spacing-medium03) 0;
 }
 
-.slides {
+.slide {
   display: flex;
   gap: var(--spacing-large01);
   transform: translate3d(-0px, 0, 0);
@@ -37,7 +37,7 @@
   max-width: 50ch;
 }
 
-.slides .button-texto-container {
+.slide .button-texto-container {
   display: flex;
   align-items: center;
   gap: var(--spacing-small05);
@@ -67,7 +67,7 @@
   padding-right: var(--spacing-small06);
 }
 
-.slides .slide-texto-motivacional {
+.slide .slide-texto-motivacional {
   font: var(--font-small-bold);
   color: var(--color07);
   max-width: 24ch;
@@ -120,23 +120,23 @@
 }
 
 .slide-medula::before {
-  background-image: url('../../img/slides/slide-medula.jpg');
+  background-image: url('../../img/slide/slide-medula.jpg');
 }
 
 .slide-alimento::before {
-  background-image: url('../../img/slides/slide-alimento.jpg');
+  background-image: url('../../img/slide/slide-alimento.jpg');
 }
 
 .slide-lacres::before {
-  background-image: url('../../img/slides/slide-lacres.jpg');
+  background-image: url('../../img/slide/slide-lacres.jpg');
 }
 
 .slide-sangue::before {
-  background-image: url('../../img/slides/slide-sangue.jpg');
+  background-image: url('../../img/slide/slide-sangue.jpg');
 }
 
 .slide-cabelo::before {
-  background-image: url('../../img/slides/slide-cabelo.jpg');
+  background-image: url('../../img/slide/slide-cabelo.jpg');
 }
 
 /* Media queries   */
