@@ -35,6 +35,7 @@
   display: grid;
   grid-template-columns: max-content 1fr;
   padding: var(--spacing-large01) var(--spacing-small05);
+  margin-bottom: 40px;
 }
 
 /* Navegação */
