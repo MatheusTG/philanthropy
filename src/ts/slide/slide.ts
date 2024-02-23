@@ -63,7 +63,7 @@ export default class Slide {
     slideAtivo.classList.add(this.activeClass);
   }
 
-  findSlidePosition() {
+  setSlidePosition() {
     if (this.slide) {
       const slides = Array.from(this.slide.children);
 
@@ -78,6 +78,14 @@ export default class Slide {
         }
       });
     }
+  }
+
+  setSlideIndex(index: number) {
+    this.index = {
+      prev: index - 1 ? index - 1 : null,
+      active: index,
+      next: index + 1 <= this.slideArray.length ? index + 1 : null,
+    };
   }
 
   changeSlide(index: number) {
@@ -117,8 +125,10 @@ export default class Slide {
     if (event instanceof MouseEvent) {
       event.preventDefault();
       this.dataSlideMove.startX = event.clientX;
+      window.addEventListener('mouseup', this.onEnd);
     } else if (event instanceof TouchEvent) {
       this.dataSlideMove.startX = event.changedTouches[0].clientX;
+      window.addEventListener('touchend', this.onEnd);
     }
 
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
@@ -133,17 +143,16 @@ export default class Slide {
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
     this.container?.removeEventListener(eventType, this.onMove);
 
-    if (this.dataSlideMove.movement > 120) this.prev();
-    else if (this.dataSlideMove.movement < -120) this.next();
-    else this.changeSlide(this.index.active);
-  }
+    if (this.dataSlideMove.movement > 10 || this.dataSlideMove.movement < -10) {
+      if (this.dataSlideMove.movement > 120) this.prev();
+      else if (this.dataSlideMove.movement < -120) this.next();
+      else this.changeSlide(this.index.active);
 
-  setSlideIndex(index: number) {
-    this.index = {
-      prev: index - 1 ? index - 1 : null,
-      active: index,
-      next: index + 1 <= this.slideArray.length ? index + 1 : null,
-    };
+      this.dataSlideMove.movement = 0;
+    }
+
+    window.removeEventListener('mouseup', this.onEnd);
+    window.removeEventListener('touchend', this.onEnd);
   }
 
   prev() {
@@ -165,16 +174,13 @@ export default class Slide {
   addSlideEvents() {
     this.container?.addEventListener('mousedown', this.onStart);
     this.container?.addEventListener('touchstart', this.onStart);
-    this.container?.addEventListener('mouseup', this.onEnd);
-    this.container?.addEventListener('touchend', this.onEnd);
   }
 
   onResize() {
-    console.log('oi');
     setTimeout(() => {
-      this.findSlidePosition();
+      this.setSlidePosition();
       this.changeSlide(this.index.active);
-    }, 1000);
+    }, 200);
   }
 
   addResizeEvent() {
@@ -192,7 +198,7 @@ export default class Slide {
     this.bindEvents();
     this.addSlideEvents();
     this.addResizeEvent();
-    this.findSlidePosition();
+    this.setSlidePosition();
     this.transition(true);
     this.changeSlide(3);
   }
