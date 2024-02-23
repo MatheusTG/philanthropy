@@ -1,3 +1,5 @@
+import debounce from '../helper/debounce';
+
 export default class Slide {
   container: HTMLElement | null;
   slide: HTMLElement | null;
@@ -12,6 +14,14 @@ export default class Slide {
     element: HTMLElement;
     position: number;
   }[];
+
+  index: {
+    prev: number | null;
+    active: number;
+    next: number | null;
+  };
+
+  activeClass: string;
   constructor(container: string, slide: string) {
     this.container = document.querySelector(container);
     this.slide = document.querySelector(slide);
@@ -23,20 +33,48 @@ export default class Slide {
     };
 
     this.slideArray = [];
+    this.index = {
+      prev: 2,
+      active: 3,
+      next: 4,
+    };
+
+    this.activeClass = 'active';
+  }
+
+  transition(active: boolean) {
+    if (this.slide) {
+      if (active) {
+        this.slide.style.transition = 'transform 0.5s';
+      } else {
+        this.slide.style.transition = '';
+      }
+    }
+  }
+
+  addActiveClass(index: number) {
+    // Remove a activeClass de todos os slides
+    this.slideArray.forEach((item) => {
+      item.element.classList.remove(this.activeClass);
+    });
+
+    // Adiciona a activeClass no slide ativo
+    const slideAtivo = this.slideArray[index].element;
+    slideAtivo.classList.add(this.activeClass);
   }
 
   findSlidePosition() {
     if (this.slide) {
       const slides = Array.from(this.slide.children);
 
-      slides.forEach((element) => {
+      slides.forEach((element, index) => {
         if (element instanceof HTMLElement) {
           const slideMargin =
             (document.documentElement.clientWidth - element.offsetWidth) / 2;
-          this.slideArray.push({
+          this.slideArray[index] = {
             element,
             position: slideMargin + element.offsetLeft * -1,
-          });
+          };
         }
       });
     }
@@ -45,7 +83,14 @@ export default class Slide {
   changeSlide(index: number) {
     const position = this.slideArray[index - 1].position;
     this.moveSlide(position);
+
+    // Atualiza a posição atual do slide
     this.dataSlideMove.currentPosition = position;
+
+    // Atualiza os valores de self.index
+    this.setSlideIndex(index);
+
+    this.addActiveClass(this.index.active - 1);
   }
 
   moveSlide(distX: number) {
@@ -67,6 +112,8 @@ export default class Slide {
   }
 
   onStart(event: Event) {
+    this.transition(false);
+
     if (event instanceof MouseEvent) {
       event.preventDefault();
       this.dataSlideMove.startX = event.clientX;
@@ -79,10 +126,40 @@ export default class Slide {
   }
 
   onEnd(event: Event) {
+    this.transition(true);
+
     this.dataSlideMove.currentPosition += this.dataSlideMove.movement;
 
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
     this.container?.removeEventListener(eventType, this.onMove);
+
+    if (this.dataSlideMove.movement > 120) this.prev();
+    else if (this.dataSlideMove.movement < -120) this.next();
+    else this.changeSlide(this.index.active);
+  }
+
+  setSlideIndex(index: number) {
+    this.index = {
+      prev: index - 1 ? index - 1 : null,
+      active: index,
+      next: index + 1 <= this.slideArray.length ? index + 1 : null,
+    };
+  }
+
+  prev() {
+    if (this.index.prev) {
+      this.changeSlide(this.index.prev);
+    } else {
+      this.changeSlide(this.index.active);
+    }
+  }
+
+  next() {
+    if (this.index.next) {
+      this.changeSlide(this.index.next);
+    } else {
+      this.changeSlide(this.index.active);
+    }
   }
 
   addSlideEvents() {
@@ -92,16 +169,31 @@ export default class Slide {
     this.container?.addEventListener('touchend', this.onEnd);
   }
 
+  onResize() {
+    console.log('oi');
+    setTimeout(() => {
+      this.findSlidePosition();
+      this.changeSlide(this.index.active);
+    }, 1000);
+  }
+
+  addResizeEvent() {
+    window.addEventListener('resize', this.onResize);
+  }
+
   bindEvents() {
     this.onStart = this.onStart.bind(this);
     this.onEnd = this.onEnd.bind(this);
     this.onMove = this.onMove.bind(this);
+    this.onResize = debounce(this.onResize.bind(this), 200);
   }
 
   init() {
     this.bindEvents();
     this.addSlideEvents();
+    this.addResizeEvent();
     this.findSlidePosition();
+    this.transition(true);
     this.changeSlide(3);
   }
 }
