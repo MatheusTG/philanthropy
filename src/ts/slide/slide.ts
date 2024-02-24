@@ -1,6 +1,6 @@
 import debounce from '../helper/debounce';
 
-export default class Slide {
+class Slide {
   container: HTMLElement | null;
   slide: HTMLElement | null;
 
@@ -22,6 +22,7 @@ export default class Slide {
   };
 
   activeClass: string;
+  changeSlideEvent: Event;
   constructor(container: string, slide: string) {
     this.container = document.querySelector(container);
     this.slide = document.querySelector(slide);
@@ -40,6 +41,8 @@ export default class Slide {
     };
 
     this.activeClass = 'active';
+
+    this.changeSlideEvent = new Event('changeSlideEvent');
   }
 
   transition(active: boolean) {
@@ -99,6 +102,8 @@ export default class Slide {
     this.setSlideIndex(index);
 
     this.addActiveClass(this.index.active - 1);
+
+    this.container?.dispatchEvent(this.changeSlideEvent);
   }
 
   moveSlide(distX: number) {
@@ -201,5 +206,59 @@ export default class Slide {
     this.setSlidePosition();
     this.transition(true);
     this.changeSlide(3);
+  }
+}
+
+export default class SlideConfig extends Slide {
+  controls: HTMLElement[] | null;
+  constructor(container: string, slide: string, controls?: string) {
+    super(container, slide);
+
+    this.controls = null;
+    if (controls) {
+      const constrolsContainer = document.querySelector(controls);
+      if (constrolsContainer) {
+        this.controls = <HTMLElement[]>Array.from(constrolsContainer?.children);
+      }
+    }
+
+    this.bindControlEvents();
+  }
+
+  connectControls() {
+    this.activeControl();
+    this.addControlEvent();
+    this.container?.addEventListener('changeSlideEvent', this.activeControl);
+  }
+
+  activeControl() {
+    if (this.controls) {
+      this.controls.forEach((control) => {
+        control.classList.remove(this.activeClass);
+      });
+      this.controls[this.index.active - 1].classList.add(this.activeClass);
+    }
+  }
+
+  onClickControl(event: Event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    if (element instanceof HTMLElement && this.controls) {
+      this.setSlideIndex(this.controls.indexOf(element) + 1);
+      this.activeControl();
+      this.changeSlide(this.index.active);
+    }
+  }
+
+  addControlEvent() {
+    this.controls?.forEach((control) => {
+      control.addEventListener('click', this.onClickControl);
+      control.addEventListener('touchstart', this.onClickControl);
+    });
+  }
+
+  bindControlEvents() {
+    this.onClickControl = this.onClickControl.bind(this);
+    (this.activeControl = this.activeControl.bind(this)), 10;
   }
 }
