@@ -83,14 +83,17 @@
   border: 2px solid var(--color-p32-01);
   color: var(--color00);
   font: var(--font-medium-bold);
+  text-decoration: none;
   padding: var(--spacing-small02) var(--spacing-small05);
+  cursor: pointer;
 }
 
 .slide-button img {
   width: 2rem;
 }
 
-.slide-sangue .slide-button {
+.slide-sangue .slide-button,
+.slide-medula .slide-button {
   background-color: var(--color00);
   color: var(--color12);
   border: none;

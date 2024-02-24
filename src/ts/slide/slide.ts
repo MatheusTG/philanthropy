@@ -125,10 +125,10 @@ class Slide {
   }
 
   onStart(event: Event) {
+    event.preventDefault();
     this.transition(false);
 
     if (event instanceof MouseEvent) {
-      event.preventDefault();
       this.dataSlideMove.startX = event.clientX;
       window.addEventListener('mouseup', this.onEnd);
     } else if (event instanceof TouchEvent) {
@@ -142,8 +142,6 @@ class Slide {
 
   onEnd(event: Event) {
     this.transition(true);
-
-    this.dataSlideMove.currentPosition += this.dataSlideMove.movement;
 
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
     this.container?.removeEventListener(eventType, this.onMove);
@@ -211,12 +209,12 @@ class Slide {
 
 export default class SlideConfig extends Slide {
   controls: HTMLElement[] | null;
-  constructor(container: string, slide: string, controls?: string) {
+  constructor(container: string, slide: string, controlsContainer?: string) {
     super(container, slide);
 
     this.controls = null;
-    if (controls) {
-      const constrolsContainer = document.querySelector(controls);
+    if (controlsContainer) {
+      const constrolsContainer = document.querySelector(controlsContainer);
       if (constrolsContainer) {
         this.controls = <HTMLElement[]>Array.from(constrolsContainer?.children);
       }
