@@ -1,12 +1,35 @@
 .menu {
+  box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 240px;
+  width: 280px;
   border-right: 2px solid var(--color10);
   border-bottom: 2px solid var(--color10);
   padding: var(--spacing-small05);
+  z-index: 200;
+}
+
+.menu-logo-fechar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-small05);
+}
+
+.menu-logo {
+  width: 40px;
+}
+
+.menu-cassino {
+  font-size: 48px;
+  font-family: var(--font-barlow);
+  font-weight: bold;
+  text-align: center;
+  background-image: linear-gradient(to top, black, white);
+  background-clip: text;
+  color: transparent;
 }
 
 .menu-buttons {
@@ -37,8 +60,6 @@
   position: relative;
 }
 
-.menu-buttons li:first-child::before,
-.menu-buttons li:first-child::after,
 .menu-buttons li:last-child::before,
 .menu-buttons li:last-child::after {
   content: '';
@@ -49,22 +70,34 @@
   position: absolute;
 }
 
-.menu-buttons li:first-child::before {
-  left: 0px;
-  top: -16px;
-}
-
-.menu-buttons li:first-child::after {
-  right: 0px;
-  top: -32px;
-}
-
 .menu-buttons li:last-child::before {
-  left: 0px;
+  right: 0px;
   bottom: -16px;
 }
 
 .menu-buttons li:last-child::after {
-  right: 0px;
+  left: 0px;
   bottom: -32px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    left: initial;
+    right: 0px;
+  }
+  .menu-fechar {
+    display: flex;
+    justify-content: end;
+  }
+  .menu-buttons li:last-child::before {
+    right: initial;
+    left: 0px;
+    bottom: -16px;
+  }
+
+  .menu-buttons li:last-child::after {
+    left: initial;
+    right: 0px;
+    bottom: -32px;
+  }
 }

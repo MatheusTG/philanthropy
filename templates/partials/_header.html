@@ -1,6 +1,6 @@
 {% load static %}
 <nav class="menu-container">
-  <div class="logo">
+  <div class="header-logo">
     <a href="#"><img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz"></a>
   </div>
   <div class="menu-perfil-container">
@@ -41,9 +41,15 @@
 </div>
 
 <div class="menu">
-  <div class="menu-fechar">
-    <img src="{% static 'icones/icone-fechar.svg' %}" alt="Fechar">
+  <div class="menu-logo-fechar-container">
+    <div class="menu-logo">
+      <img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz">
+    </div>
+    <div class="menu-fechar">
+      <img src="{% static 'icones/icone-fechar.svg' %}" alt="Fechar">
+    </div>
   </div>
+  <h2 class="menu-cassino">Cassino</h2>
   <ul class="menu-buttons">
     <li>
       <a href="#"><img src="{% static 'icones/icone-calculadora.svg' %}" alt="Calculadora">Calculadora</a>
