@@ -90,7 +90,17 @@
 }
 
 .slide-button img {
-  width: 2rem;
+  width: 1.75rem;
+}
+
+.slide-button:hover {
+  background-image: linear-gradient(
+    135deg,
+    var(--color-p32-02),
+    var(--color-p32-03)
+  );
+  border: 2px solid transparent;
+  transition: 0.2s;
 }
 
 .slide-sangue .slide-button,
@@ -100,6 +110,13 @@
   border: none;
   padding: var(--spacing-small01) var(--spacing-small05);
   padding-right: var(--spacing-small06);
+  border: 2px solid white;
+}
+
+.slide-sangue .slide-button:hover,
+.slide-medula .slide-button:hover {
+  background: transparent;
+  color: white;
 }
 
 .slide .slide-texto-motivacional {
