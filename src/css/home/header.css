@@ -46,7 +46,7 @@
   margin-bottom: var(--spacing-small06);
 }
 
-.logo {
+.header .logo {
   width: 4rem;
 }
 
@@ -100,11 +100,16 @@
   gap: var(--spacing-small05);
 }
 
+/* Class active adicionada em src/ts/header/turmas.ts */
+.turmas li.active button {
+  color: white;
+}
+
 .turmas button {
   background-color: transparent;
   border: none;
   color: var(--color07);
-  font: var(--font-small-bold);
+  font: bold 1.125rem/1.5 var(--font-IBM), sans-serif;
   letter-spacing: 1px;
 }
 
@@ -141,25 +146,51 @@
     display: none;
   }
 
-  .header .turmas {
-    display: block;
+  /* Turmas 600px */
+  .header .redes-turmas-container {
+    position: relative;
   }
-  .header .turmas button {
-    padding: var(--spacing-small02) var(--spacing-small04);
-    background-color: var(--color10);
+  .header .turmas {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 100;
+  }
+  .header .turmas.active {
+    display: grid;
+    gap: 0px;
+    background-color: rgba(18, 18, 18, 0.8);
     border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    transition: background 0.5s;
   }
   .header .turmas li {
     display: none;
   }
-  .header .turmas li.active {
+  .header .turmas.active li {
     display: block;
+    z-index: -1;
+    animation: fadeInDown 0.3s forwards;
+  }
+  /* buttom com active */
+  .header .turmas li.active {
+    grid-row: 1;
+    display: block;
+    animation: none;
+  }
+  /* buttons sem active */
+  .header .turmas button {
+    padding: var(--spacing-small02) var(--spacing-small04);
   }
   .header .turmas li.active button {
     display: flex;
+    background-color: var(--color10);
+    border-radius: var(--border-radius-medium);
     align-items: center;
     gap: var(--spacing-small02);
+    color: var(--color07);
   }
+  /* Ícone de seta no botão ativo */
   .header .turmas li.active button::after {
     content: '';
     display: inline-block;
@@ -168,5 +199,20 @@
     background-image: url('../../img/icones/icone-seta.svg');
     background-repeat: no-repeat;
     background-size: 100%;
+    transform: rotate(0);
+    transition: transform 0.3s;
+  }
+  .header .turmas.active li.active button::after {
+    transform: rotate(-90deg);
+  }
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -30px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
