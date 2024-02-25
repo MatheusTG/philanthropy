@@ -131,7 +131,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .header {
     display: block;
     padding: var(--spacing-small05);
@@ -204,15 +204,5 @@
   }
   .header .turmas.active li.active button::after {
     transform: rotate(-90deg);
-  }
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translate3d(0, -30px, 0);
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
   }
 }

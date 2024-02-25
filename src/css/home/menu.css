@@ -1,0 +1,70 @@
+.menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 240px;
+  border-right: 2px solid var(--color10);
+  border-bottom: 2px solid var(--color10);
+  padding: var(--spacing-small05);
+}
+
+.menu-buttons {
+  display: grid;
+  gap: var(--spacing-small05);
+  padding: var(--spacing-medium02) 0;
+}
+
+.menu-buttons a {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-small02);
+  text-decoration: none;
+  font: var(--font-small-bold);
+  color: var(--color03);
+  background-color: var(--color11);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-small03) 0;
+  border: 2px solid var(--color11);
+}
+
+.menu-buttons a:hover {
+  background-color: var(--color12);
+}
+
+/* Linhas de decoração */
+.menu-buttons li {
+  position: relative;
+}
+
+.menu-buttons li:first-child::before,
+.menu-buttons li:first-child::after,
+.menu-buttons li:last-child::before,
+.menu-buttons li:last-child::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: var(--color10);
+  position: absolute;
+}
+
+.menu-buttons li:first-child::before {
+  left: 0px;
+  top: -16px;
+}
+
+.menu-buttons li:first-child::after {
+  right: 0px;
+  top: -32px;
+}
+
+.menu-buttons li:last-child::before {
+  left: 0px;
+  bottom: -16px;
+}
+
+.menu-buttons li:last-child::after {
+  right: 0px;
+  bottom: -32px;
+}
