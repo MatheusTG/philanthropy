@@ -125,10 +125,10 @@ class Slide {
   }
 
   onStart(event: Event) {
-    event.preventDefault();
     this.transition(false);
 
     if (event instanceof MouseEvent) {
+      event.preventDefault();
       this.dataSlideMove.startX = event.clientX;
       window.addEventListener('mouseup', this.onEnd);
     } else if (event instanceof TouchEvent) {
@@ -183,7 +183,7 @@ class Slide {
     setTimeout(() => {
       this.setSlidePosition();
       this.changeSlide(this.index.active);
-    }, 200);
+    }, 500);
   }
 
   addResizeEvent() {

@@ -14,14 +14,14 @@
   content: '';
   display: inline-block;
   width: 12vw;
-  min-width: 200px;
+  min-width: 120px;
   height: 16px;
   background-color: var(--color12);
   border-radius: var(--border-radius-medium);
   position: absolute;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
-  bottom: 5%;
+  bottom: 16px;
   transition: 0.5s;
 }
 
@@ -66,6 +66,7 @@
 
 .slide-item .titulo-paragrafo {
   max-width: 50ch;
+  color: var(--color03);
 }
 
 .slide .button-texto-container {
@@ -107,12 +108,7 @@
   max-width: 24ch;
 }
 
-.slide-alimento .texto-apoio {
-  font: var(--font-small-bold);
-  margin-bottom: var(--spacing-small03);
-}
-
-.slide-sangue .slide-equipe-container {
+.slide-item .slide-equipe-container {
   font-size: 1rem;
   font-family: var(--font-barlow);
   line-height: 1.5;
@@ -125,12 +121,12 @@
   width: max-content;
 }
 
-.slide-sangue .slide-equipe {
+.slide-item .slide-equipe {
   position: relative;
   color: var(--color00);
 }
 
-.slide-sangue .slide-equipe::before {
+.slide-item .slide-equipe::before {
   content: '';
   display: inline-block;
   background-color: red;
@@ -139,6 +135,17 @@
   height: 2px;
   bottom: -2px;
   left: 0px;
+}
+
+.slide-utfpr {
+  width: 10%;
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  opacity: 0.2;
+  background-color: white;
+  padding: 8px;
+  border-radius: var(--border-radius-medium);
 }
 
 .slide-item::before {
@@ -175,11 +182,19 @@
 
 /* Media queries   */
 @media (max-width: 1200px) {
-  .slide-item * {
-    display: none;
+  .slide-item {
+    padding: var(--spacing-medium03);
+    border-radius: 20px;
   }
   .slide {
     gap: var(--spacing-medium05);
+  }
+  .slide-container::after {
+    bottom: 8px;
+  }
+  .slide-utfpr {
+    right: var(--spacing-medium03);
+    bottom: var(--spacing-medium03);
   }
 }
 
@@ -190,11 +205,32 @@
   .slide-container::after {
     display: none;
   }
+  .slide-item .titulo-container {
+    margin-bottom: 0;
+  }
+  .slide-item .titulo-container .titulo-paragrafo,
+  .slide-item .slide-texto-motivacional {
+    display: none;
+  }
 }
 
 @media (max-width: 720px) {
   .slide-item {
     min-width: 90vw;
     min-height: calc(90vw * 0.6);
+  }
+  .slide-sangue .slide-button img,
+  .slide-medula .slide-button img {
+    width: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slide-item {
+    padding: var(--spacing-small05);
+  }
+  .slide-utfpr {
+    right: var(--spacing-small05);
+    bottom: var(--spacing-small05);
   }
 }
