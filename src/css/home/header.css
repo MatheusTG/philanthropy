@@ -59,6 +59,12 @@
 .header-menu,
 .header-perfil {
   cursor: pointer;
+  transition: opacity 0.1s;
+}
+
+.header-menu:hover,
+.header-perfil:hover {
+  opacity: 0.6;
 }
 
 .header .login-cadastro {
@@ -75,13 +81,17 @@
   text-decoration: none;
 }
 
+.header .login-cadastro a:hover {
+  color: var(--color00);
+}
+
 .header .titulo {
   grid-column: 1;
   margin-bottom: var(--spacing-small03);
 }
 
 .header .titulo {
-  color: white;
+  color: var(--color00);
 }
 
 .header .titulo-paragrafo {
@@ -105,11 +115,6 @@
   gap: var(--spacing-small05);
 }
 
-/* Class active adicionada em src/ts/header/turmas.ts */
-.turmas li.active button {
-  color: white;
-}
-
 .turmas button {
   background-color: transparent;
   border: none;
@@ -117,6 +122,31 @@
   font: bold 1.125rem/1.5 var(--font-IBM), sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
+  position: relative;
+}
+
+.turmas button::before {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color00);
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Class active adicionada por src/ts/header/turmas.ts */
+.turmas li.active button {
+  color: var(--color00);
+}
+
+.turmas li.active button::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color00);
 }
 
 /* Media queries */
@@ -163,6 +193,7 @@
   .header .turmas.active {
     background-color: rgba(18, 18, 18, 0.9);
     border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+    overflow: hidden;
     z-index: 1;
   }
   .header .turmas.active li {
@@ -171,9 +202,6 @@
     transform: translate3d(0, 0, 0);
     opacity: 1;
     z-index: -1;
-  }
-  .header .turmas.active li:last-child {
-    border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
   }
   .header .turmas li.active button::after {
     content: '';
@@ -207,11 +235,15 @@
   .header .turmas li button {
     padding: var(--spacing-small02) var(--spacing-small04);
   }
+  .header .turmas li button::before {
+    display: none;
+  }
 
   /* Turmas item ativo 600px */
   .header .turmas li.active {
     visibility: visible;
     transform: translate3d(0, 0, 0);
+    transition: initial;
     order: 1;
     z-index: 1;
     opacity: 1;

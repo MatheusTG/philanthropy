@@ -46,7 +46,7 @@ export default class Menu {
     if (!this.menuContainer?.classList.contains(this.activeClass)) {
       this.activeMenu();
       if (this.menuContainer) {
-        this.outsideClick.addOutsideEvents();
+        this.outsideClick.init();
       }
       // Adiciona evento click ao buttonClose para fechar o menu
       this.events.forEach((userEvent) => {

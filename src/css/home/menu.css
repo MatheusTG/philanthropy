@@ -79,13 +79,13 @@
   height: 2px;
   background-color: var(--color10);
   position: absolute;
+  transition: 0.8s;
 }
 
 /* Adiciona animação nas linhas de decoração */
 .menu.active .menu-buttons li:last-child::before,
 .menu.active .menu-buttons li:last-child::after {
   width: 60%;
-  transition: 0.8s;
 }
 
 .menu-buttons li:last-child::before {

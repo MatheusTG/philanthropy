@@ -12,8 +12,6 @@ export default class OutsideClick {
     this.events = events;
     this.callback = callback;
     this.outside = document.documentElement;
-
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
   handleOutsideClick(event: Event) {
@@ -37,5 +35,10 @@ export default class OutsideClick {
     this.events.forEach((userEvent) => {
       this.outside.removeEventListener(userEvent, this.handleOutsideClick);
     });
+  }
+
+  init() {
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.addOutsideEvents();
   }
 }

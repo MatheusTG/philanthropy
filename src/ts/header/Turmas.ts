@@ -1,7 +1,10 @@
+import OutsideClick from '../helper/OutsideClick';
+
 export default class Turmas {
   turmaContainer: HTMLElement | null;
   turmaButtons: HTMLElement[] | null;
   activeClass: string;
+  outsideClick: OutsideClick;
   constructor(turmaContainer: string) {
     // Container
     this.turmaContainer = document.querySelector(turmaContainer);
@@ -16,6 +19,12 @@ export default class Turmas {
     }
 
     this.activeClass = 'active';
+
+    this.outsideClick = new OutsideClick(
+      turmaContainer,
+      ['click', 'touchstart'],
+      () => this.closeTurma()
+    );
   }
 
   activeButton(index: number) {
@@ -25,6 +34,10 @@ export default class Turmas {
     if (this.turmaButtons) {
       this.turmaButtons[index].classList.add(this.activeClass);
     }
+  }
+
+  closeTurma() {
+    this.turmaContainer?.classList.remove(this.activeClass);
   }
 
   // Aciona qual uns dos botões for clicado
@@ -42,14 +55,12 @@ export default class Turmas {
         } else {
           // SetTimeout faz com que haja animação na seta ao
           // selecionar uma turma diferente da atual
-          setTimeout(
-            () => this.turmaContainer?.classList.remove(this.activeClass),
-            30
-          );
+          setTimeout(this.closeTurma, 30);
           this.activeButton(index);
         }
       }
     }
+    this.outsideClick.init();
   }
 
   addButtonsEvent() {
@@ -60,6 +71,7 @@ export default class Turmas {
 
   bindEvents() {
     this.onClick = this.onClick.bind(this);
+    this.closeTurma = this.closeTurma.bind(this);
   }
 
   init() {
