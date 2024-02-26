@@ -40,6 +40,7 @@ export default class Menu {
   }
 
   openMenu(event: Event) {
+    event.preventDefault();
     // O if faz com que o menu feche se o buttonOpen for
     // clicado com o menu aberto
     if (!this.menuContainer?.classList.contains(this.activeClass)) {

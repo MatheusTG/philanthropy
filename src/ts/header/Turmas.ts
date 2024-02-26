@@ -40,8 +40,13 @@ export default class Turmas {
         if (isAtivo) {
           this.turmaContainer?.classList.toggle(this.activeClass);
         } else {
+          // SetTimeout faz com que haja animação na seta ao
+          // selecionar uma turma diferente da atual
+          setTimeout(
+            () => this.turmaContainer?.classList.remove(this.activeClass),
+            30
+          );
           this.activeButton(index);
-          this.turmaContainer?.classList.remove(this.activeClass);
         }
       }
     }

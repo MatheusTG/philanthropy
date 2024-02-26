@@ -56,6 +56,11 @@
   gap: var(--spacing-small06);
 }
 
+.header-menu,
+.header-perfil {
+  cursor: pointer;
+}
+
 .header .login-cadastro {
   margin-left: auto;
   display: flex;
@@ -111,10 +116,7 @@
   color: var(--color07);
   font: bold 1.125rem/1.5 var(--font-IBM), sans-serif;
   letter-spacing: 1px;
-}
-
-.turmas-form {
-  display: none;
+  cursor: pointer;
 }
 
 /* Media queries */
@@ -146,51 +148,33 @@
     display: none;
   }
 
-  /* Turmas 600px */
+  /* Turmas container geral 600px */
   .header .redes-turmas-container {
     position: relative;
   }
   .header .turmas {
-    position: absolute;
-    top: 20px;
-    right: 0px;
-    z-index: 100;
-  }
-  .header .turmas.active {
-    display: grid;
+    flex-direction: column;
     gap: 0px;
-    background-color: rgba(18, 18, 18, 0.8);
-    border-radius: var(--border-radius-medium);
-    overflow: hidden;
-    transition: background 0.5s;
+    position: absolute;
+    right: 0px;
   }
-  .header .turmas li {
-    display: none;
+
+  /* Turmas container ativo 600px */
+  .header .turmas.active {
+    background-color: rgba(18, 18, 18, 0.9);
+    border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+    z-index: 1;
   }
   .header .turmas.active li {
-    display: block;
+    background-color: rgba(18, 18, 18, 0.9);
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
     z-index: -1;
-    animation: fadeInDown 0.3s forwards;
   }
-  /* buttom com active */
-  .header .turmas li.active {
-    grid-row: 1;
-    display: block;
-    animation: none;
+  .header .turmas.active li:last-child {
+    border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
   }
-  /* buttons sem active */
-  .header .turmas button {
-    padding: var(--spacing-small02) var(--spacing-small04);
-  }
-  .header .turmas li.active button {
-    display: flex;
-    background-color: var(--color10);
-    border-radius: var(--border-radius-medium);
-    align-items: center;
-    gap: var(--spacing-small02);
-    color: var(--color07);
-  }
-  /* Ícone de seta no botão ativo */
   .header .turmas li.active button::after {
     content: '';
     display: inline-block;
@@ -202,7 +186,41 @@
     transform: rotate(0);
     transition: transform 0.3s;
   }
+  /* Faz com que ao selecionar outra turma haja animação */
+  .header .turmas.active li button::after {
+    transform: rotate(0);
+  }
   .header .turmas.active li.active button::after {
     transform: rotate(-90deg);
+  }
+
+  /* Turmas item geral 600px */
+  .header .turmas li {
+    visibility: hidden;
+    transform: translate3d(0, -30px, 0);
+    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    order: 2;
+  }
+  .header .turmas li button {
+    padding: var(--spacing-small02) var(--spacing-small04);
+  }
+
+  /* Turmas item ativo 600px */
+  .header .turmas li.active {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    order: 1;
+    z-index: 1;
+    opacity: 1;
+  }
+  .header .turmas li.active button {
+    display: flex;
+    gap: var(--spacing-small02);
+    align-items: center;
+    background-color: var(--color10);
+    border-radius: var(--border-radius-medium);
   }
 }
