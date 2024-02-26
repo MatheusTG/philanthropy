@@ -4,7 +4,7 @@
     <a href="#"><img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz"></a>
   </div>
   <div class="menu-perfil-container">
-    <div class="header-menu">
+    <div class="header-menu" data-menu="abrir">
       <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
     </div>
     <div class="header-perfil">
@@ -40,16 +40,18 @@
   </ul>
 </div>
 
-<div class="menu">
+<div class="menu" data-menu="container">
   <div class="menu-logo-fechar-container">
     <div class="menu-logo">
       <img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz">
     </div>
-    <div class="menu-fechar">
+    <div class="menu-fechar" data-menu="fechar">
       <img src="{% static 'icones/icone-fechar.svg' %}" alt="Fechar">
     </div>
   </div>
+
   <h2 class="menu-cassino">Cassino</h2>
+
   <ul class="menu-buttons">
     <li>
       <a href="#"><img src="{% static 'icones/icone-calculadora.svg' %}" alt="Calculadora">Calculadora</a>
