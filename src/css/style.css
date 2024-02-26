@@ -1,0 +1,9 @@
+/* global */
+@import './global/global.css';
+@import './global/animations.css';
+
+/* home */
+@import './home/header.css';
+@import './home/menu.css';
+@import './home/slide-controls.css';
+@import './home/slide.css';

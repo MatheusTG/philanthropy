@@ -1,0 +1,129 @@
+:root {
+  /* Cores Primárias */
+  --color-p32-03: #002400;
+  --color-p32-02: #006300;
+  --color-p32-01: #097a07;
+
+  /* Cores (Tons de cinza) */
+  --color12: #000000;
+  --color11: #121212;
+  --color10: #2e2e2e;
+  --color09: #404040;
+  --color08: #595959;
+  --color07: #707070;
+  --color06: #9c9c9c;
+  --color05: #b2b2b2;
+  --color04: #cccccc;
+  --color03: #dedede;
+  --color02: #ededed;
+  --color01: #f7f7f7;
+  --color00: #ffffff;
+
+  /* Tipografia */
+  --font-barlow: 'Barlow';
+  --font-IBM: 'IBM Plex Mono';
+
+  /* Tipografias prontas */
+  --font-small-bold: bold 1.125rem/1.5 var(--font-barlow), sans-serif;
+  --font-medium-bold: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
+
+  /* Border radius */
+  --border-radius-large: 1.25rem; /* 20px */
+  --border-radius-medium: 0.5rem; /* 8px */
+
+  /* Espaçamentos */
+  --spacing-small01: 0.25rem; /* 4px */
+  --spacing-small02: 0.5rem; /* 8px */
+  --spacing-small03: 0.75rem; /* 12px */
+  --spacing-small04: 1rem; /* 16px */
+  --spacing-small05: 1.25rem; /* 20px */
+  --spacing-small06: 1.5rem; /* 24px */
+  --spacing-medium01: 2rem; /* 32px */
+  --spacing-medium02: 2.25rem; /* 36px */
+  --spacing-medium03: 2.5rem; /* 40px */
+  --spacing-medium04: 3rem; /* 48px */
+  --spacing-medium05: 3.75rem; /* 60px */
+  --spacing-medium06: 4.5rem; /* 72px */
+  --spacing-large01: 5rem; /* 80px */
+  --spacing-large02: 7.5rem; /* 120px */
+  --spacing-large03: 10rem; /* 160px */
+  --spacing-large04: 12.5rem; /* 200px */
+  --spacing-large04: 15rem; /* 240px */
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: var(--color12);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    minmax(40px, 10vw)
+    minmax(400px, 45vw)
+    minmax(400px, 45vw)
+    minmax(40px, 10vw);
+}
+@media (max-width: 1000px) {
+  .container {
+    display: block;
+  }
+}
+
+.titulo {
+  font-weight: bold;
+  line-height: 1.125;
+  font-family: var(--font-barlow), sans-serif;
+}
+
+.titulo-large {
+  font-size: 4rem;
+}
+
+.titulo-medium {
+  font-size: 3rem;
+}
+@media (max-width: 600px) {
+  .titulo-large {
+    font-size: 3rem;
+  }
+  .titulo-medium {
+    font-size: 2.25rem;
+  }
+}
+
+.titulo-container .titulo {
+  margin-bottom: 12px;
+}
+
+.titulo-paragrafo {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  font-family: var(--font-barlow), sans-serif;
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.redes img {
+  width: 40px;
+  cursor: pointer;
+}

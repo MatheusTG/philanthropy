@@ -1,0 +1,69 @@
+{% load static %}
+<nav class="menu-container">
+  <div class="header-logo">
+    <a href="./"><img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz"></a>
+  </div>
+  <div class="menu-perfil-container">
+    <div class="header-menu" data-menu="abrir">
+      <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
+    </div>
+    <div class="header-perfil">
+      <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
+    </div>
+  </div>
+  <div class="login-cadastro">
+    <div class="login"><a href="#">Login</a></div>
+    <div class="cadastro"><a href="#">Cadastro</a></div>
+  </div>
+</nav>
+
+<h1 class="titulo titulo-large">Conheça a M33</h1>
+<p class="titulo-paragrafo">Os alunos do técnico da UTFPR são reponsáveis todos os anos por uns dos maiores eventos de filantriopia de Campo Mourão.</p>
+
+<div class="redes-turmas-container">
+  <ul class="redes">
+    <li>
+      <img src="{% static 'logo-tipos/logo-whatsapp.svg' %}" alt="Logo Whatsapp">
+    </li>
+    <li>
+      <img src="{% static 'logo-tipos/logo-instagram.svg' %}" alt="Logo Instagram">
+    </li>
+    <li>
+      <img src="{% static 'logo-tipos/logo-youtube.svg' %}" alt="Logo YouTube">
+    </li>
+  </ul>
+  
+  <ul class="turmas" data-turma="container">
+    <li class="turma-button"><button>M31</button></li>
+    <li class="turma-button"><button>M32</button></li>
+    <li class="turma-button"><button>M33</button></li>
+  </ul>
+</div>
+
+<div class="menu" data-menu="container">
+  <div class="menu-logo-fechar-container">
+    <div class="menu-logo">
+      <img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz">
+    </div>
+    <div class="menu-fechar" data-menu="fechar">
+      <img src="{% static 'icones/icone-fechar.svg' %}" alt="Fechar">
+    </div>
+  </div>
+
+  <h2 class="menu-cassino">Cassino</h2>
+
+  <ul class="menu-buttons">
+    <li>
+      <a href="#"><img src="{% static 'icones/icone-calculadora.svg' %}" alt="Calculadora">Calculadora</a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'icones/icone-votacao.svg' %}" alt="Calculadora">Votações</a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'icones/icone-regras.svg' %}" alt="Calculadora">Regras</a>
+    </li>
+    <li>
+      <a href="#"><img src="{% static 'icones/icone-telefone.svg' %}" alt="Calculadora">Contato</a>
+    </li>
+  </ul>
+</div>

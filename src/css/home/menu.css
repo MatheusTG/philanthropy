@@ -1,0 +1,126 @@
+.menu {
+  display: block;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0px;
+  left: -30px;
+  width: 280px;
+  border-right: 2px solid var(--color10);
+  border-bottom: 2px solid var(--color10);
+  padding: var(--spacing-small05);
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu.active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  left: 0px;
+}
+
+.menu-logo-fechar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-small05);
+}
+
+.menu-logo {
+  width: 40px;
+}
+
+.menu-cassino {
+  font-size: 48px;
+  font-family: var(--font-barlow);
+  font-weight: bold;
+  text-align: center;
+  background-image: linear-gradient(to top, black, white);
+  background-clip: text;
+  color: transparent;
+}
+
+.menu-buttons {
+  display: grid;
+  gap: var(--spacing-small05);
+  padding: var(--spacing-medium02) 0;
+}
+
+.menu-buttons a {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-small02);
+  text-decoration: none;
+  font: var(--font-small-bold);
+  color: var(--color03);
+  background-color: var(--color11);
+  border-radius: var(--border-radius-medium);
+  padding: var(--spacing-small03) 0;
+  border: 2px solid var(--color11);
+}
+
+.menu-buttons a:hover {
+  background-color: var(--color12);
+}
+
+/* Linhas de decoração */
+.menu-buttons li {
+  position: relative;
+}
+
+.menu-buttons li:last-child::before,
+.menu-buttons li:last-child::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color10);
+  position: absolute;
+  transition: 0.8s;
+}
+
+/* Adiciona animação nas linhas de decoração */
+.menu.active .menu-buttons li:last-child::before,
+.menu.active .menu-buttons li:last-child::after {
+  width: 60%;
+}
+
+.menu-buttons li:last-child::before {
+  right: 0px;
+  bottom: -16px;
+}
+
+.menu-buttons li:last-child::after {
+  left: 0px;
+  bottom: -32px;
+}
+
+@media (max-width: 720px) {
+  .menu {
+    left: initial;
+    right: -30px;
+  }
+  .menu.menu.active {
+    left: initial;
+    right: 0px;
+  }
+  .menu-fechar {
+    order: -1;
+    display: flex;
+    justify-content: end;
+  }
+  .menu-buttons li:last-child::before {
+    right: initial;
+    left: 0px;
+    bottom: -16px;
+  }
+
+  .menu-buttons li:last-child::after {
+    left: initial;
+    right: 0px;
+    bottom: -32px;
+  }
+}

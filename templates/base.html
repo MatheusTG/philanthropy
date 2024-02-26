@@ -2,20 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-
-    {% if debug %}
-    <link rel="stylesheet" href="http://localhost:5173/src/css/style.css" />
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    {% endif %}
+    {% include 'partials/_head.html' %}
   </head>
 
   <body>
     {% block content %}{% endblock %}
+
     {% if debug %}
-    <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
-    {% else %} {% render_vite_bundle %} {% endif %}
+      <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
+    {% else %}
+      {% render_vite_bundle %}
+    {% endif %}
   </body>
 </html>
