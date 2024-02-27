@@ -25,7 +25,6 @@ export default class Menu {
 
   activeMenu() {
     this.menuContainer?.classList.add(this.activeClass);
-    console.log(this.menuContainer?.classList);
   }
 
   closeMenu(event?: Event) {
