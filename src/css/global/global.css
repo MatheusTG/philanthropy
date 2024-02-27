@@ -96,12 +96,19 @@ ul {
 .titulo-medium {
   font-size: 3rem;
 }
+
+.titulo-medium {
+  font-size: 2rem;
+}
 @media (max-width: 600px) {
   .titulo-large {
     font-size: 3rem;
   }
   .titulo-medium {
     font-size: 2.25rem;
+  }
+  .titulo-medium {
+    font-size: 1.5rem;
   }
 }
 
