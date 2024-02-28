@@ -6,7 +6,7 @@
 }
 
 .conheca-gincana-container > * {
-  grid-column: 2/-1;
+  grid-column: 2/4;
   opacity: 0;
 }
 
@@ -79,7 +79,7 @@
 @media (max-width: 1200px) {
   .conheca-gincana-container {
     padding: var(--spacing-large01) var(--spacing-medium05);
-    padding-bottom: var(--spacing-large03);
+    /* padding-bottom: var(--spacing-large03); */
   }
   .conheca-gincana-container::after {
     background-size: 120%;
@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   .conheca-gincana-container {
     padding: var(--spacing-medium03) var(--spacing-small05);
     padding-bottom: var(--spacing-medium05);

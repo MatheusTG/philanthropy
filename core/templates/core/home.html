@@ -118,21 +118,24 @@
     </div>
   </section>
 
-  <article class="provas-gincana-container">
-    <div class="prova-cultural">
+  <article class="provas-gincana-container container">
+    <div class="prova-cultural prova">
       <div class="titulo-container">
-        <h1 class="titulo titulo-medium">Cultural</h1>
+        <h1 class="titulo titulo-medium">
+          Cultural 
+          <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+        </h1>
         <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
-        <div class="provas-videos">
-          <div>
-            <div><img src="{% static 'slide/slide-alimento.jpg' %}" alt=""></div>
-          </div>
-          <div>
-            <div><img src="{% static 'slide/slide-sangue.jpg' %}" alt=""></div>
-          </div>
-          <div>
-            <div><img src="{% static 'slide/slide-lacres.jpg' %}" alt=""></div>
-          </div>
+      </div>  
+      <div class="cultural-videos">
+        <div>
+          <div><video playsinline autoplay src="{% static 'videos/video-cultural-musica.mp4' %}"></video></div>
+        </div>
+        <div>
+          <div><video playsinline autoplay src="{% static 'videos/video-cultural-danca.mp4' %}"></video></div>
+        </div>
+        <div>
+          <div><video playsinline autoplay src="{% static 'videos/video-cultural-cover.mp4' %}"></video></div>
         </div>
       </div>
       <div class="provas-buttons">

@@ -60,7 +60,8 @@ body {
   background-color: var(--color12);
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -76,10 +77,20 @@ ul {
     minmax(400px, 45vw)
     minmax(400px, 45vw)
     minmax(40px, 10vw);
+  padding: 20px 0;
 }
 @media (max-width: 1000px) {
   .container {
     display: block;
+    padding-right: 60px !important;
+    padding-left: 60px !important;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    display: block;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
   }
 }
 
@@ -97,7 +108,7 @@ ul {
   font-size: 3rem;
 }
 
-.titulo-medium {
+.titulo-small {
   font-size: 2rem;
 }
 @media (max-width: 600px) {
@@ -107,7 +118,7 @@ ul {
   .titulo-medium {
     font-size: 2.25rem;
   }
-  .titulo-medium {
+  .titulo-small {
     font-size: 1.5rem;
   }
 }
