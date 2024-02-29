@@ -118,13 +118,13 @@
     </div>
   </section>
 
-  <article class="provas-gincana-container container">
-    <div class="prova-cultural prova">
+  <article class="provas-gincana-container">
+    <div class="prova-cultural prova-gincana container active">
       <div class="titulo-container">
-        <h1 class="titulo titulo-medium">
+        <h2 class="titulo titulo-medium">
           Cultural 
           <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
-        </h1>
+        </h2>
         <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
       </div>  
       <div class="cultural-videos">
@@ -138,10 +138,22 @@
           <div><video playsinline autoplay src="{% static 'videos/video-cultural-cover.mp4' %}"></video></div>
         </div>
       </div>
-      <div class="provas-buttons">
-        <button class="button-prev"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
-        <button class="button-next"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
+    </div>
+
+    <div class="prova-filantropica prova-gincana container">
+      <div class="titulo-container">
+        <h2 class="titulo titulo-medium">Filantrópica</h2>
+        <p class="titulo-paragrafo">As provas filantrópicas são divididadas em 5 caterorias diferentes.</p>
       </div>
+      <ul class="filantropica-categorias">
+        <li>
+          <img src="{% static 'icones\filantropica\icone-alimento.svg' %}" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="provas-buttons">
+      <button class="button-prev"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
+      <button class="button-next"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
     </div>
   </article>
 {% endblock %}

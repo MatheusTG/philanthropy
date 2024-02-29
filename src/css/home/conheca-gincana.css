@@ -1,31 +1,7 @@
 .conheca-gincana-container {
-  padding-top: var(--spacing-large03);
-  padding-bottom: var(--spacing-large03);
+  padding: var(--spacing-large03) var(--spacing-small05);
   position: relative;
   overflow: hidden;
-}
-
-.conheca-gincana-container > * {
-  grid-column: 2/4;
-  opacity: 0;
-}
-
-.conheca-gincana-container .titulo-container {
-  margin-bottom: var(--spacing-medium01);
-}
-
-.conheca-gincana-container .titulo {
-  color: var(--color00);
-  margin-bottom: var(--spacing-small04);
-}
-
-.conheca-gincana-container .titulo-paragrafo {
-  color: var(--color03);
-  max-width: 54ch;
-}
-
-.conheca-gincana-container .titulo-paragrafo.mobile {
-  display: none;
 }
 
 /* Background de conheça a gincana */
@@ -59,12 +35,37 @@
   opacity: 0;
   z-index: -1;
 }
+
 .conheca-gincana-container.active:after {
   box-shadow: inset 0px 0px 0px 0px black;
   opacity: 0.4;
 }
+
+.conheca-gincana-container > * {
+  grid-column: 2/4;
+  opacity: 0;
+}
+
 .conheca-gincana-container.active > * {
   animation: fadeInRight 1s forwards;
+}
+
+.conheca-gincana-container .titulo-container {
+  margin-bottom: var(--spacing-medium01);
+}
+
+.conheca-gincana-container .titulo {
+  color: var(--color00);
+  margin-bottom: var(--spacing-small04);
+}
+
+.conheca-gincana-container .titulo-paragrafo {
+  color: var(--color03);
+  max-width: 54ch;
+}
+
+.conheca-gincana-container .titulo-paragrafo.mobile {
+  display: none;
 }
 
 @media (min-width: 1600px) {
@@ -89,6 +90,9 @@
 }
 
 @media (max-width: 1000px) {
+  .conheca-gincana-container {
+    padding: var(--spacing-large03) var(--spacing-medium05);
+  }
   .conheca-gincana-container::before {
     display: none;
   }
@@ -111,6 +115,8 @@
   .conheca-gincana-container {
     padding-top: var(--spacing-medium03);
     padding-bottom: var(--spacing-medium05);
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
   }
   .conheca-gincana-container::after {
     top: 5%;

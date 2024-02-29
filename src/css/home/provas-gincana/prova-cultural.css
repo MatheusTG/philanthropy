@@ -1,0 +1,73 @@
+.prova-cultural {
+  background-image: url('../../../img/backgrounds/fundo-cultural.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.prova-cultural .titulo-container,
+.prova-cultural .cultural-videos {
+  padding-left: var(--spacing-small05);
+}
+
+/* Títulos */
+.prova-cultural .titulo-container {
+  padding-bottom: var(--spacing-medium03);
+  margin-bottom: var(--spacing-medium04);
+  position: relative;
+}
+
+.prova-cultural .titulo-container::after {
+  content: '';
+  width: 33%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0px;
+}
+
+.prova-cultural .titulo {
+  display: flex;
+  gap: var(--spacing-small04);
+}
+
+.prova-cultural .titulo-paragrafo {
+  max-width: 50ch;
+}
+
+/* Vídeos */
+.prova-cultural .cultural-videos {
+  grid-row: 2;
+  display: flex;
+  gap: var(--spacing-medium03);
+}
+
+.prova-cultural video {
+  min-width: 200px;
+  max-width: 200px;
+  border-radius: var(--border-radius-large);
+}
+
+.prova-cultural .titulo-container {
+  margin-bottom: var(--spacing-medium05);
+}
+
+@media (max-width: 1000px) {
+  .prova-cultural .titulo-container,
+  .prova-cultural .cultural-videos {
+    padding-left: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 800px) {
+  .prova-cultural .cultural-videos {
+    overflow-x: auto;
+    padding-bottom: var(--spacing-small06);
+  }
+}
+
+@media (max-width: 720px) {
+  .prova-cultural .titulo-container,
+  .prova-cultural .cultural-videos {
+    padding-left: var(--spacing-small05);
+  }
+}
