@@ -40,7 +40,9 @@
 }
 
 @media (max-width: 1000px) {
-  .provas-gincana-container > .prova-gincana.active {
+  .provas-gincana-container .prova-gincana.active {
     display: block;
+    padding-bottom: var(--spacing-medium05);
+    height: 600px;
   }
 }

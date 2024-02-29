@@ -1,5 +1,7 @@
-.prova-filantropica {
+.prova-filantropica-content {
   position: relative;
+  padding-left: var(--spacing-small05);
+  padding-right: var(--spacing-small05);
 }
 
 .prova-filantropica::before {
@@ -47,8 +49,31 @@
   padding: 8px;
 }
 
+.filantropica-categorias img {
+  width: 24px;
+}
+
 .paragrafo-ajuda {
   font: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
   margin-bottom: 16px;
   color: var(--color00);
+}
+
+@media (max-width: 1000px) {
+  .prova-filantropica-content {
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 720px) {
+  .prova-filantropica-content {
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
+  }
+  .filantropica-categorias li {
+    flex-grow: 1;
+    max-width: 50%;
+    justify-content: center;
+  }
 }
