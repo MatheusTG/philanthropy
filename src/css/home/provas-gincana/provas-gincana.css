@@ -1,6 +1,5 @@
 .provas-gincana-container {
   position: relative;
-  color: white;
 }
 
 .provas-gincana-container::before {
@@ -17,7 +16,7 @@
   display: none;
   align-items: start;
   padding: var(--spacing-large02) 0;
-  height: 600px;
+  height: 720px;
   position: relative;
 }
 
@@ -36,39 +35,12 @@
   right: calc(10vw + 20px);
 }
 
-.provas-gincana-container .provas-buttons button {
-  background-color: transparent;
-  border-top: 4px solid var(--color00);
-  border-bottom: 4px solid var(--color00);
-  border-left: 4px solid var(--color00);
-  border-right: 1px solid var(--color00);
-  padding: var(--spacing-small02);
-  border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
-}
-
 .provas-gincana-container .provas-buttons .button-next {
   transform: rotate(180deg);
-}
-
-@media (max-width: 1200px) {
-  .provas-gincana-container .provas-buttons {
-    right: 10vw;
-  }
 }
 
 @media (max-width: 1000px) {
   .provas-gincana-container > .prova-gincana.active {
     display: block;
-  }
-  .provas-gincana-container .provas-buttons {
-    bottom: 40px;
-    left: 60px;
-  }
-}
-
-@media (max-width: 1000px) {
-  .provas-gincana-container .provas-buttons {
-    bottom: 20px;
-    left: 20px;
   }
 }

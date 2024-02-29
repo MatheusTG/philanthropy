@@ -134,6 +134,23 @@ ul {
   font-family: var(--font-barlow), sans-serif;
 }
 
+.button {
+  border-radius: var(--border-radius-medium);
+  background-color: transparent;
+  border: 2px solid var(--color-p32-01);
+  color: var(--color00);
+  font: var(--font-medium-bold);
+  text-decoration: none;
+  padding: var(--spacing-small02) var(--spacing-medium01);
+  cursor: pointer;
+  transition: 0.2s;
+  width: max-content;
+}
+
+.button:hover {
+  background-color: rgba(9, 122, 7, 0.4);
+}
+
 .redes {
   display: flex;
   align-items: center;

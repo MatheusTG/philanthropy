@@ -20,7 +20,7 @@
   content: '';
   width: 33%;
   height: 2px;
-  background-color: white;
+  background-color: var(--color00);
   position: absolute;
   bottom: 0px;
 }
@@ -28,10 +28,12 @@
 .prova-cultural .titulo {
   display: flex;
   gap: var(--spacing-small04);
+  color: var(--color00);
 }
 
 .prova-cultural .titulo-paragrafo {
   max-width: 50ch;
+  color: var(--color03);
 }
 
 /* Vídeos */
