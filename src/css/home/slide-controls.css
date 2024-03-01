@@ -2,7 +2,7 @@
   grid-column: 1/-1;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: var(--spacing-small04);
   margin-bottom: 20px;
 }
 

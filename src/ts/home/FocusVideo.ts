@@ -15,7 +15,6 @@ export default class FocusVideo {
   }
 
   focusVideo() {
-    console.log('oi');
     if (this.button?.classList.contains(this.activeClass)) {
       this.videos.forEach((video) => (video.style.opacity = '1'));
     } else {
