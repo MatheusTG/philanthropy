@@ -1,5 +1,5 @@
 .prova-cultural {
-  background-image: url('../../../img/backgrounds/fundo-cultural.jpg');
+  background-image: url('../../../img/provas-gincana/cultural/fundo-cultural.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -41,22 +41,69 @@
   grid-row: 2;
   display: flex;
   gap: var(--spacing-medium03);
+  width: max-content;
+  position: relative;
 }
 
-.prova-cultural video {
+[data-video-cultural] {
+  transition: 0.5s;
+}
+
+.prova-cultural .video-cultural-container .titulo-video {
+  font: bold 1rem/1.5 var(--font-barlow), sans-serif;
+  color: var(--color08);
+  text-align: center;
+  margin-top: var(--spacing-small03);
+  background-color: var(--color11);
+  padding: var(--spacing-small01) var(--spacing-small05);
+  border-radius: var(--border-radius-medium);
+}
+
+.cultural-videos video,
+.cultural-videos img {
   min-width: 200px;
   max-width: 200px;
   border-radius: var(--border-radius-large);
 }
 
-.prova-cultural .titulo-container {
-  margin-bottom: var(--spacing-medium05);
+.cultural-videos-button {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  width: 40px;
+  height: 20px;
+  background-color: var(--color11);
+  border-radius: var(--border-radius-medium);
+  border: none;
+}
+
+.cultural-videos-button::before {
+  content: '';
+  background-color: var(--color05);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: var(--border-radius-medium);
+  transition: 0.2s;
+}
+
+.cultural-videos-button.active::before {
+  left: calc(40px - 20px);
 }
 
 @media (max-width: 1000px) {
-  .prova-cultural .titulo-container,
-  .prova-cultural .cultural-videos {
+  .prova-cultural .titulo-container {
     padding-left: var(--spacing-medium05);
+  }
+  .cultural-videos-button {
+    right: var(--spacing-medium05);
+  }
+  .prova-cultural .cultural-videos {
+    padding-left: 0px;
+    width: initial;
+    justify-content: center;
   }
 }
 
@@ -64,6 +111,12 @@
   .prova-cultural .cultural-videos {
     overflow-x: auto;
     padding-bottom: var(--spacing-small06);
+  }
+  .cultural-videos-button {
+    display: none;
+  }
+  .prova-cultural .video-cultural-container .titulo-video {
+    justify-self: initial;
   }
 }
 

@@ -129,14 +129,24 @@
           <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
         </div>
         <div class="cultural-videos">
-          <div>
-            <div><video playsinline autoplay src="{% static 'videos/video-cultural-musica.mp4' %}"></video></div>
+          <button class="cultural-videos-button"></button>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline src="{% static 'provas-gincana/cultural/videos/video-cultural-musica.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Música</h3>
           </div>
-          <div>
-            <div><video playsinline autoplay src="{% static 'videos/video-cultural-danca.mp4' %}"></video></div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="danca">
+              <video playsinline src="{% static 'provas-gincana/cultural/videos/video-cultural-danca.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Dança</h3>
           </div>
-          <div>
-            <div><video playsinline autoplay src="{% static 'videos/video-cultural-cover.mp4' %}"></video></div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline src="{% static 'provas-gincana/cultural/videos/video-cultural-cover.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Cover</h3>
           </div>
         </div>
       </div>
@@ -150,23 +160,23 @@
         </div>
         <ul class="filantropica-categorias">
           <li>
-            <img src="{% static 'icones\filantropica\icone-alimento.svg' %}" alt="">
+            <img src="{% static 'provas-gincana\filantropica\icone-alimento.svg' %}" alt="">
             Alimento
           </li>
           <li>
-            <img src="{% static 'icones\filantropica\icone-sangue.svg' %}" alt="">
+            <img src="{% static 'provas-gincana\filantropica\icone-sangue.svg' %}" alt="">
             Sangue
           </li>
           <li>
-            <img src="{% static 'icones\filantropica\icone-lacres.png' %}" alt="">
+            <img src="{% static 'provas-gincana\filantropica\icone-lacres.png' %}" alt="">
             Lacres
           </li>
           <li>
-            <img src="{% static 'icones\filantropica\icone-medula.png' %}" alt="">
+            <img src="{% static 'provas-gincana\filantropica\icone-medula.png' %}" alt="">
             Medula
           </li>
           <li>
-            <img src="{% static 'icones\filantropica\icone-cabelo.png' %}" alt="">
+            <img src="{% static 'provas-gincana\filantropica\icone-cabelo.png' %}" alt="">
             Cabelo
           </li>
         </ul>

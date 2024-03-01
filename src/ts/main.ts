@@ -2,6 +2,7 @@ import SlideConfig from './slide/slide';
 import Turmas from './home/Turmas';
 import Menu from './home/Menu';
 import ScrollAnima from './helper/ScrollAnima';
+import FocusVideo from './home/FocusVideo';
 
 // Slides dos slide
 const slide = new SlideConfig('.slide-container', '.slide', '.slide-controls');
@@ -22,3 +23,6 @@ menu.init();
 
 const scrollAnima = new ScrollAnima('[data-anima="scroll"]');
 scrollAnima.init();
+
+const focusVideo = new FocusVideo('[data-video-cultural]', '.cultural-videos-button');
+focusVideo.init();

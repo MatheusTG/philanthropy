@@ -28,17 +28,6 @@
   display: grid;
 }
 
-.provas-gincana-container .provas-buttons {
-  display: flex;
-  position: absolute;
-  bottom: 120px;
-  right: calc(10vw + 20px);
-}
-
-.provas-gincana-container .provas-buttons .button-next {
-  transform: rotate(180deg);
-}
-
 @media (max-width: 1000px) {
   .provas-gincana-container .prova-gincana.active {
     display: block;
