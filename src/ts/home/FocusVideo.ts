@@ -1,6 +1,7 @@
 export default class FocusVideo {
   videos: HTMLElement[];
   button: HTMLButtonElement | null;
+  activeClass: string;
   constructor(SelectorVideos: string, SelectorButton: string) {
     const videos = document.querySelectorAll<HTMLElement>(SelectorVideos);
     this.videos = Array.from(videos);
@@ -9,13 +10,24 @@ export default class FocusVideo {
     button instanceof HTMLButtonElement
       ? (this.button = button)
       : (this.button = null);
+
+    this.activeClass = 'active';
+  }
+
+  focusVideo() {
+    console.log('oi');
+    if (this.button?.classList.contains(this.activeClass)) {
+      this.videos.forEach((video) => (video.style.opacity = '1'));
+    } else {
+      this.videos.forEach((video) => (video.style.opacity = '0.6'));
+    }
   }
 
   activeVideo(element: HTMLElement, active: boolean) {
     const video = element.querySelector('video');
     if (
       video instanceof HTMLVideoElement &&
-      this.button?.classList.contains('active')
+      this.button?.classList.contains(this.activeClass)
     ) {
       if (active) {
         video.play();
@@ -47,8 +59,8 @@ export default class FocusVideo {
   }
 
   onButtonClick() {
-    console.log(this.button);
-    this.button?.classList.toggle('active');
+    this.button?.classList.toggle(this.activeClass);
+    this.focusVideo();
   }
 
   addVideoEvent() {
@@ -67,5 +79,6 @@ export default class FocusVideo {
   init() {
     this.bindEvents();
     this.addVideoEvent();
+    this.focusVideo();
   }
 }
