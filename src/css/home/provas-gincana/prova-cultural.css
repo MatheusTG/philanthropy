@@ -2,6 +2,7 @@
   background-image: url('../../../img/provas-gincana/cultural/fundo-cultural.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
+  width: 110vw;
 }
 
 .prova-cultural .titulo-container,

@@ -119,47 +119,14 @@
   </section>
 
   <article class="provas-gincana-container">
-    <ul class="provas-controls">
-      <li><img src="{% static 'provas-gincana/icone-filantropica.jpg' %}" alt=""></li>
-      <li><img src="{% static 'provas-gincana/icone-recreativa.jpg' %}" alt=""></li>
-      <li><img src="{% static 'provas-gincana/icone-esportiva.jpg' %}" alt=""></li>
-      <li class="active"><img src="{% static 'provas-gincana/icone-cultural.jpg' %}" alt=""></li>
+    <ul class="provas-controls" data-prova-controls="container">
+      <li><img src="{% static 'provas-gincana/icone-filantropica.jpg' %}" alt="Lacres"></li>
+      <li><img src="{% static 'provas-gincana/icone-recreativa.jpg' %}" alt="Gincana"></li>
+      <li><img src="{% static 'provas-gincana/icone-esportiva.jpg' %}" alt="Volêi"></li>
+      <li><img src="{% static 'provas-gincana/icone-cultural.jpg' %}" alt="Cantoras"></li>
     </ul>
 
-    <div class="prova-cultural prova-gincana container active">
-      <div class="prova-cultural-content">
-        <div class="titulo-container">
-          <h2 class="titulo titulo-medium">
-            Cultural
-            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
-          </h2>
-          <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
-        </div>
-        <div class="cultural-videos">
-          <button class="cultural-videos-button"></button>
-          <div class="video-cultural-container">
-            <div data-video-cultural="musica">
-              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-musica.mp4' %}"></video>
-            </div>
-            <h3 class="titulo-video">Música</h3>
-          </div>
-          <div class="video-cultural-container">
-            <div data-video-cultural="danca">
-              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-danca.mp4' %}"></video>
-            </div>
-            <h3 class="titulo-video">Dança</h3>
-          </div>
-          <div class="video-cultural-container">
-            <div data-video-cultural="musica">
-              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-cover.mp4' %}"></video>
-            </div>
-            <h3 class="titulo-video">Cover</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="prova-filantropica prova-gincana container">
+    <div class="prova-filantropica prova-gincana container" data-prova-gincana="container">
       <div class="prova-filantropica-content">
         <div class="titulo-container">
           <h2 class="titulo titulo-medium">Filantrópica</h2>
@@ -189,6 +156,45 @@
         </ul>
         <p class="paragrafo-ajuda">Toda Ajuda é bem vinda!</p>
         <button class="button">Doar</button>
+      </div>
+    </div>
+
+    <div class="prova-recreativa prova-gincana container" data-prova-gincana="container">
+    </div>
+
+    <div class="prova-esportiva prova-gincana container" data-prova-gincana="container">
+    </div>
+
+    <div class="prova-cultural prova-gincana container active" data-prova-gincana="container">
+      <div class="prova-cultural-content">
+        <div class="titulo-container">
+          <h2 class="titulo titulo-medium">
+            Cultural
+            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+          </h2>
+          <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
+        </div>
+        <div class="cultural-videos">
+          <button class="cultural-videos-button"></button>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-musica.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Música</h3>
+          </div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="danca">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-danca.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Dança</h3>
+          </div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-cover.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Cover</h3>
+          </div>
+        </div>
       </div>
     </div>
   </article>

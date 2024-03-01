@@ -1,6 +1,7 @@
 .provas-gincana-container {
   position: relative;
   padding-top: var(--spacing-large01);
+  overflow-x: hidden;
 }
 
 .provas-gincana-container::before {
@@ -16,6 +17,7 @@
   display: flex;
   justify-content: center;
   gap: var(--spacing-small05);
+  padding-bottom: 10px;
 }
 
 .provas-gincana-container .provas-controls li {
@@ -23,6 +25,7 @@
   overflow: hidden;
   width: 40px;
   opacity: 0.4;
+  transition: 0.3s;
 }
 
 .provas-gincana-container .provas-controls li.active {
@@ -37,6 +40,7 @@
   padding: var(--spacing-medium05) 0;
   height: 720px;
   position: relative;
+  animation: fadeInRight 1s forwards;
 }
 
 .provas-gincana-container > .prova-gincana > * {
@@ -52,5 +56,14 @@
     display: block;
     padding-bottom: var(--spacing-medium05);
     height: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .provas-gincana-container > .prova-gincana {
+    animation: initial;
+  }
+  .prova-gincana > div > * {
+    animation: fadeInRight 1s forwards;
   }
 }
