@@ -272,8 +272,38 @@
       <li><img src="{% static 'patrocinadores/logo-viacao-garcia.png' %}" alt="Logo Viação Garcia"></li>
       <li><img src="{% static 'patrocinadores/logo-laura-santos.png' %}" alt="Logo Laura Santos"></li>
     </ul>
-    <div class="roberto-imagem">
-      <img src="{% static 'backgrounds\roberto-imagem.png' %}" alt="Pessoa">
+    <div class="imagem-roberto">
+      <img src="{% static 'backgrounds\imagem-roberto.png' %}" alt="Pessoa">
     </div>
+  </section>
+
+  <section class="contato-email-container">
+    <div>
+      <div class="titulo-container">
+        <h1 class="titulo titulo-medium">Nos envie um email</h1>
+      </div>
+      <div class="imagem-natalia-luana">
+        <img src="{% static 'backgrounds/natalia-luana.png' %}" alt="Vencedoras">
+      </div>
+    </div>
+    <form action="" class="formulario-contato-email">
+      <div>
+        <label for="nome-contato">Nome</label>
+        <input type="text" id="nome-contato" name="nome-nome-contato">
+      </div>
+      <div>
+        <label for="empresa-contato">Empresa<span>*opicional</span></label>
+        <input type="text" id="empresa-contato" name="empresa-contato">
+      </div>
+      <div>
+        <label for="email-contato">Email</label>
+        <input type="email" id="email-contato" name="email-contato" placeholder="email@email.com">
+      </div>
+      <div>
+        <label for="texto-contato">Mensagem</label>
+        <textarea name="texto-contato" id="texto-contato" cols="30" rows="10"></textarea>
+      </div>
+      <button class="contato-button button">Enviar</button>
+    </form>
   </section>
 {% endblock %}

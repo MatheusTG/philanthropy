@@ -44,7 +44,7 @@
   max-height: 120px;
 }
 
-.roberto-imagem {
+.imagem-roberto {
   width: 480px;
   position: absolute;
   right: -60px;
@@ -59,7 +59,7 @@
   .patrocinadores-container .lista-patrocinadores img {
     max-width: 100%;
   }
-  .roberto-imagem {
+  .imagem-roberto {
     display: none;
   }
 }
