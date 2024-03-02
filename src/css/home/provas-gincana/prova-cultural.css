@@ -12,10 +12,12 @@
   width: 110vw;
 }
 
-.prova-cultural .titulo-container,
-.prova-cultural .cultural-videos {
+.prova-cultural .titulo-container {
   padding-left: var(--spacing-small05);
   padding-right: var(--spacing-small05);
+}
+.prova-cultural .cultural-videos {
+  padding-left: var(--spacing-small05);
 }
 
 /* Títulos */
