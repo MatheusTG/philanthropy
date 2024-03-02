@@ -5,6 +5,17 @@
   opacity: 1;
 }
 
+.patrocinadores-container::after {
+  content: '';
+  width: 90%;
+  height: 2px;
+  background-color: var(--color04);
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
 .patrocinadores-container > * {
   grid-column: 2/4;
 }
@@ -14,6 +25,7 @@
 }
 
 .patrocinadores-container .titulo-paragrafo {
+  color: var(--color10);
   max-width: 50ch;
 }
 
@@ -44,7 +56,7 @@
   max-height: 120px;
 }
 
-.roberto-imagem {
+.imagem-roberto {
   width: 480px;
   position: absolute;
   right: -60px;
@@ -59,7 +71,7 @@
   .patrocinadores-container .lista-patrocinadores img {
     max-width: 100%;
   }
-  .roberto-imagem {
+  .imagem-roberto {
     display: none;
   }
 }
