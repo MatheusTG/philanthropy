@@ -1,0 +1,77 @@
+.contato-email-container {
+  background-color: var(--color00);
+  padding: var(--spacing-large02) var(--spacing-small05);
+  position: relative;
+}
+
+.contato-email-container .titulo-container {
+  grid-column: 2;
+}
+
+.contato-email-container .titulo-paragrafo {
+  color: var(--color10);
+  max-width: 40ch;
+}
+
+.contato-email-container .formulario-contato-email {
+  grid-column: 3;
+  display: grid;
+  gap: var(--spacing-small05);
+  grid-template-columns: 1fr 1fr;
+  z-index: 2;
+}
+
+.contato-email-container label {
+  display: block;
+  font: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
+  margin-bottom: var(--spacing-small01);
+}
+
+.contato-email-container input,
+.contato-email-container textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: var(--spacing-small03);
+  border: 2px solid var(--color12);
+  border-radius: var(--border-radius-small);
+  resize: none;
+  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  background-color: transparent;
+}
+
+.nome-contato-container {
+  grid-column: 1;
+}
+
+.empresa-contato-container {
+  grid-column: 2;
+}
+
+.email-contato-container {
+  grid-column: span 2;
+}
+
+.mensagem-contato-container {
+  grid-column: span 2;
+}
+
+.contato-email-container .texto-input-opicional {
+  color: var(--color07);
+  font: 500 0.875rem/1.5 var(--font-barlow), sans-serif;
+  margin-left: var(--spacing-small02);
+}
+
+.contato-email-container .button-contato {
+  color: var(--color-p32-02);
+}
+
+.imagem-natalia-luana {
+  position: absolute;
+  left: 10%;
+  bottom: 0px;
+  width: 520px;
+  opacity: 0.2;
+  z-index: 1;
+  pointer-events: none;
+}

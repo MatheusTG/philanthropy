@@ -277,33 +277,32 @@
     </div>
   </section>
 
-  <section class="contato-email-container">
-    <div>
-      <div class="titulo-container">
-        <h1 class="titulo titulo-medium">Nos envie um email</h1>
-      </div>
-      <div class="imagem-natalia-luana">
-        <img src="{% static 'backgrounds/natalia-luana.png' %}" alt="Vencedoras">
-      </div>
+  <section class="contato-email-container container">
+    <div class="titulo-container">
+      <h1 class="titulo titulo-medium">Nos envie um email</h1>
+      <p class="titulo-paragrafo">Tire suas duvidas conosco. Torne-se um apoiador nessa luta.</p>
     </div>
     <form action="" class="formulario-contato-email">
-      <div>
+      <div class="nome-contato-container">
         <label for="nome-contato">Nome</label>
         <input type="text" id="nome-contato" name="nome-nome-contato">
       </div>
-      <div>
-        <label for="empresa-contato">Empresa<span>*opicional</span></label>
+      <div class="empresa-contato-container">
+        <label for="empresa-contato">Empresa<span class="texto-input-opicional">*opicional</span></label>
         <input type="text" id="empresa-contato" name="empresa-contato">
       </div>
-      <div>
+      <div class="email-contato-container">
         <label for="email-contato">Email</label>
         <input type="email" id="email-contato" name="email-contato" placeholder="email@email.com">
       </div>
-      <div>
-        <label for="texto-contato">Mensagem</label>
-        <textarea name="texto-contato" id="texto-contato" cols="30" rows="10"></textarea>
+      <div class="mensagem-contato-container">
+        <label for="mensagem-contato">Mensagem</label>
+        <textarea name="mensagem-contato" id="mensagem-contato" cols="30" rows="5"></textarea>
       </div>
-      <button class="contato-button button">Enviar</button>
+      <button class="button-contato button">Enviar</button>
     </form>
+    <div class="imagem-natalia-luana">
+      <img src="{% static 'backgrounds/natalia-luana.png' %}" alt="Vencedoras">
+    </div>
   </section>
 {% endblock %}
