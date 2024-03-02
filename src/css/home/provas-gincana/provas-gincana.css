@@ -34,6 +34,8 @@
 }
 
 .provas-gincana-container > .prova-gincana {
+  background-size: 100%;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   display: none;
   align-items: start;
@@ -49,6 +51,11 @@
 
 .provas-gincana-container > .prova-gincana.active {
   display: grid;
+}
+
+.provas-gincana-container > .prova-gincana .titulo-container .titulo {
+  display: flex;
+  gap: var(--spacing-small04);
 }
 
 @media (max-width: 1000px) {

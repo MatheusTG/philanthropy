@@ -1,0 +1,45 @@
+.prova-esportiva {
+  background-image: url('../../../img/provas-gincana/esportiva/fundo-esportiva.jpg');
+  width: 110vw;
+}
+
+/* Títulos */
+.prova-esportiva .titulo-container {
+  margin-bottom: var(--spacing-medium03);
+}
+
+.prova-esportiva .titulo {
+  color: var(--color00);
+}
+
+.prova-esportiva .titulo-paragrafo {
+  color: var(--color03);
+  max-width: 54ch;
+}
+
+.prova-esportiva .titulo-jogadores {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-small05);
+}
+
+/* Esportes/Jogadores */
+.prova-esportiva .esportes-container {
+  display: flex;
+  gap: var(--spacing-medium05);
+}
+
+.prova-esportiva .titulo-esporte {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-small02);
+}
+
+.prova-esportiva .lista-jogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-small04);
+  max-width: 168px;
+}
+
+.prova-esportiva .lista-jogadores li {
+  width: 40px;
+}
