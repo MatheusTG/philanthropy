@@ -40,5 +40,7 @@ export default class OutsideClick {
   init() {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.addOutsideEvents();
+
+    return this
   }
 }

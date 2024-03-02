@@ -78,5 +78,7 @@ export default class Turmas {
     this.bindEvents();
     this.addButtonsEvent();
     this.activeButton(1);
+
+    return this
   }
 }

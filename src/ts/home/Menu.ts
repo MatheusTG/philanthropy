@@ -68,5 +68,7 @@ export default class Menu {
   init() {
     this.bindEvents();
     this.addMenuEvents();
+    
+    return this
   }
 }

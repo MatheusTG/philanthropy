@@ -40,5 +40,7 @@ export default class ProvasControls {
     this.onClick = this.onClick.bind(this);
     this.addControlsEvent();
     this.activeProva(3);
+
+    return this
   }
 }

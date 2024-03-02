@@ -79,5 +79,7 @@ export default class FocusVideo {
     this.bindEvents();
     this.addVideoEvent();
     this.focusVideo();
+    
+    return this
   }
 }
