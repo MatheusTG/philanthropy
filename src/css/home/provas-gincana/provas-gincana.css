@@ -40,7 +40,7 @@
   display: none;
   align-items: start;
   padding: var(--spacing-medium05) 0;
-  height: 720px;
+  height: 600px;
   position: relative;
   animation: fadeInRight 1s forwards;
 }
