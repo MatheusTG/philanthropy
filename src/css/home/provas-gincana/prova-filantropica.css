@@ -1,0 +1,80 @@
+.prova-filantropica-content {
+  position: relative;
+  padding-left: var(--spacing-small05);
+  padding-right: var(--spacing-small05);
+}
+
+.prova-filantropica::before {
+  content: '';
+  background-image: url('../../../img/provas-gincana/filantropica/fundo-filantropica.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0.6;
+  z-index: -1;
+  width: 110vw;
+}
+
+/* Títulos */
+.prova-filantropica .titulo-container {
+  margin-bottom: var(--spacing-small05);
+}
+
+.prova-filantropica .titulo {
+  color: var(--color00);
+}
+
+.prova-filantropica .titulo-paragrafo {
+  max-width: 50ch;
+  color: var(--color03);
+}
+
+.filantropica-categorias {
+  display: flex;
+  gap: var(--spacing-small05);
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin-bottom: var(--spacing-medium03);
+}
+
+.filantropica-categorias li {
+  display: flex;
+  gap: var(--spacing-small03);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color00);
+  font: bold 1.125rem/1.5 var(--font-barlow), sans-serif;
+  padding: 8px;
+}
+
+.filantropica-categorias img {
+  width: 24px;
+}
+
+.paragrafo-ajuda {
+  font: bold 1.5rem/1.5 var(--font-barlow), sans-serif;
+  margin-bottom: 16px;
+  color: var(--color00);
+}
+
+@media (max-width: 1000px) {
+  .prova-filantropica-content {
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 720px) {
+  .prova-filantropica-content {
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
+  }
+  .filantropica-categorias li {
+    flex-grow: 1;
+    max-width: 50%;
+    justify-content: center;
+  }
+}

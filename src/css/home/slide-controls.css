@@ -2,7 +2,7 @@
   grid-column: 1/-1;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: var(--spacing-small04);
   margin-bottom: 20px;
 }
 
@@ -41,7 +41,6 @@
 .slide-controls li img {
   margin: auto;
   border-radius: 50%;
-  /* overflow: hidden; */
   width: 40px;
   height: 40px;
   opacity: 0.4;

@@ -1,0 +1,72 @@
+.prova-recreativa-content {
+  padding-left: var(--spacing-small05);
+  padding-right: var(--spacing-small05);
+}
+
+.prova-recreativa::before {
+  content: '';
+  background-image: url('../../../img/provas-gincana/recreativa/fundo-recreativa.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 110vw;
+}
+
+.prova-recreativa .titulo-container {
+  margin-bottom: var(--spacing-medium03);
+  padding-bottom: var(--spacing-medium03);
+  position: relative;
+}
+
+.prova-recreativa .titulo-container::after {
+  content: '';
+  width: 33%;
+  height: 2px;
+  background-color: var(--color00);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.prova-recreativa .titulo {
+  color: var(--color00);
+}
+
+.prova-recreativa .titulo-paragrafo {
+  color: var(--color03);
+  max-width: 50ch;
+}
+
+.prova-recreativa .imagens-ilustrativas {
+  display: flex;
+  gap: var(--spacing-medium03);
+}
+
+.prova-recreativa .imagens-ilustrativas li {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 140px;
+  border: 4px solid white;
+}
+
+@media (max-width: 1000px) {
+  .prova-recreativa-content {
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 720px) {
+  .prova-recreativa-content {
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
+  }
+  .prova-recreativa .imagens-ilustrativas {
+    gap: var(--spacing-medium01);
+  }
+}

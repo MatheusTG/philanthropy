@@ -75,27 +75,15 @@
   gap: var(--spacing-small05);
 }
 
-.slide-button {
+.slide .button {
   display: flex;
   align-items: center;
   gap: var(--spacing-small03);
-  border-radius: var(--border-radius-medium);
-  background-color: transparent;
-  border: 2px solid var(--color-p32-01);
-  color: var(--color00);
-  font: var(--font-medium-bold);
-  text-decoration: none;
   padding: var(--spacing-small02) var(--spacing-small05);
-  cursor: pointer;
-  transition: 0.2s;
 }
 
-.slide-button img {
+.slide .button img {
   width: 1.75rem;
-}
-
-.slide-button:hover {
-  background-color: rgba(9, 122, 7, 0.4);
 }
 
 .slide-sangue .slide-button,

@@ -1,0 +1,90 @@
+.prova-esportiva-content {
+  padding-left: var(--spacing-small05);
+  padding-right: var(--spacing-small05);
+}
+
+.prova-esportiva::before {
+  content: '';
+  background-image: url('../../../img/provas-gincana/esportiva/fundo-esportiva.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 110vw;
+}
+
+/* Títulos */
+.prova-esportiva .titulo-container {
+  margin-bottom: var(--spacing-medium03);
+}
+
+.prova-esportiva .titulo {
+  color: var(--color00);
+}
+
+.prova-esportiva .titulo-paragrafo {
+  color: var(--color03);
+  max-width: 54ch;
+}
+
+.prova-esportiva .titulo-jogadores {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-small05);
+}
+
+/* Esportes/Jogadores */
+.prova-esportiva .esportes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium05);
+}
+
+.prova-esportiva .titulo-esporte {
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-small02);
+}
+
+.prova-esportiva .lista-jogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-small04);
+  max-width: 168px;
+}
+
+.prova-esportiva .lista-jogadores li {
+  width: 40px;
+}
+
+@media (max-width: 1000px) {
+  .prova-esportiva-content {
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 720px) {
+  .prova-esportiva-content {
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
+  }
+  .prova-esportiva .esportes-container {
+    gap: var(--spacing-medium02);
+  }
+}
+
+@media (max-width: 420px) {
+  .prova-esportiva .titulo-esporte {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-small04);
+  }
+  .prova-esportiva .lista-jogadores {
+    max-width: 100%;
+  }
+  .prova-esportiva .lista-jogadores li {
+    width: 60px;
+  }
+}

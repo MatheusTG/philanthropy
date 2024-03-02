@@ -25,7 +25,7 @@
           </div>
           <p class="slide-equipe-container">Doe para equipe <span class="slide-equipe">vermelha</span></p>
           <div class="button-texto-container">
-            <a class="slide-button" href="https://www.google.com.br/maps/@-24.060361,-52.3870448,3a,75y,117.22h,83.83t/data=!3m6!1e1!3m4!1scSuvK240-BSUW5lGq25N4w!2e0!7i16384!8i8192?entry=ttu" target="_blank">
+            <a class="slide-button button" href="https://www.google.com.br/maps/@-24.060361,-52.3870448,3a,75y,117.22h,83.83t/data=!3m6!1e1!3m4!1scSuvK240-BSUW5lGq25N4w!2e0!7i16384!8i8192?entry=ttu" target="_blank">
               <img src="{% static 'logo-tipos/logo-google-maps.svg' %}" alt="Logo Whatsapp">
               Doar
             </a>
@@ -40,7 +40,7 @@
             <p class="titulo-paragrafo">Todo o alimento arrecadado será doado para intituições de caridade ou convertido em sextas básicas.</p>
           </div>
           <div class="button-texto-container">
-            <a class="slide-button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20doar%20alimentos." target="_blank">
+            <a class="slide-button button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20doar%20alimentos." target="_blank">
               <img src="{% static 'logo-tipos/logo-whatsapp.svg' %}" alt="Logo Whatsapp">
               Doar
             </a>
@@ -55,7 +55,7 @@
             <p class="titulo-paragrafo">Os lacres arrecadados serão convertidos em cadeira de rodas, que serão doadas para instituições de caridade.</p>
           </div>
           <div class="button-texto-container">
-            <a class="slide-button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20doar%20lacres." target="_blank">
+            <a class="slide-button button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20doar%20lacres." target="_blank">
               <img src="{% static 'logo-tipos/logo-whatsapp.svg' %}" alt="Logo Whatsapp">
               Doar
             </a>
@@ -71,7 +71,7 @@
           </div>
           <p class="slide-equipe-container">Doe para equipe <span class="slide-equipe">vermelha</span></p>
           <div class="button-texto-container">
-            <a class="slide-button" href="https://www.google.com.br/maps/@-24.060361,-52.3870448,3a,75y,117.22h,83.83t/data=!3m6!1e1!3m4!1scSuvK240-BSUW5lGq25N4w!2e0!7i16384!8i8192?entry=ttu" target="_blank">
+            <a class="slide-button button" href="https://www.google.com.br/maps/@-24.060361,-52.3870448,3a,75y,117.22h,83.83t/data=!3m6!1e1!3m4!1scSuvK240-BSUW5lGq25N4w!2e0!7i16384!8i8192?entry=ttu" target="_blank">
               <img src="{% static 'logo-tipos/logo-google-maps.svg' %}" alt="Logo Whatsapp">
               Doar
             </a>
@@ -86,7 +86,7 @@
             <p class="titulo-paragrafo">A autoestima não é um luxo, mas sim uma necessidade. Todos merecem tê-la, nos ajude nessa luta.</p>
           </div>
           <div class="button-texto-container">
-            <a class="slide-button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20fazer%20uma%20doação de cabelo." target="_blank">
+            <a class="slide-button button" href="https://wa.me/5544999659285?text=Olá,%20gostaria%20de%20fazer%20uma%20doação de cabelo." target="_blank">
               <img src="{% static 'logo-tipos/logo-whatsapp.svg' %}" alt="Logo Whatsapp">
               Doar
             </a>
@@ -119,25 +119,142 @@
   </section>
 
   <article class="provas-gincana-container">
-    <div class="prova-cultural">
-      <div class="titulo-container">
-        <h1 class="titulo titulo-medium">Cultural</h1>
-        <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
-        <div class="provas-videos">
-          <div>
-            <div><img src="{% static 'slide/slide-alimento.jpg' %}" alt=""></div>
+    <ul class="provas-controls" data-prova-controls="container">
+      <li><img src="{% static 'provas-gincana/icone-filantropica.jpg' %}" alt="Lacres"></li>
+      <li><img src="{% static 'provas-gincana/icone-recreativa.jpg' %}" alt="Gincana"></li>
+      <li><img src="{% static 'provas-gincana/icone-esportiva.jpg' %}" alt="Volêi"></li>
+      <li><img src="{% static 'provas-gincana/icone-cultural.jpg' %}" alt="Cantoras"></li>
+    </ul>
+
+    <div class="prova-filantropica prova-gincana container" data-prova-gincana="container">
+      <div class="prova-filantropica-content">
+        <div class="titulo-container">
+          <h2 class="titulo titulo-medium">
+            Filantrópica
+            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+          </h2>
+          <p class="titulo-paragrafo">As provas filantrópicas são divididadas em 5 caterorias diferentes.</p>
+        </div>
+        <ul class="filantropica-categorias">
+          <li>
+            <img src="{% static 'provas-gincana\filantropica\icone-alimento.svg' %}" alt="Alimento">
+            Alimento
+          </li>
+          <li>
+            <img src="{% static 'provas-gincana\filantropica\icone-sangue.svg' %}" alt="Doação de sangue">
+            Sangue
+          </li>
+          <li>
+            <img src="{% static 'provas-gincana\filantropica\icone-lacres.png' %}" alt="Lacres">
+            Lacres
+          </li>
+          <li>
+            <img src="{% static 'provas-gincana\filantropica\icone-medula.png' %}" alt="Doação de medula">
+            Medula
+          </li>
+          <li>
+            <img src="{% static 'provas-gincana\filantropica\icone-cabelo.png' %}" alt="Cabelo">
+            Cabelo
+          </li>
+        </ul>
+        <p class="paragrafo-ajuda">Toda Ajuda é bem vinda!</p>
+        <button class="button">Doar</button>
+      </div>
+    </div>
+
+    <div class="prova-recreativa prova-gincana container" data-prova-gincana="container">
+      <div class="prova-recreativa-content">
+        <div class="titulo-container">
+          <h2 class="titulo titulo-medium">
+            Recreativa
+            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+          </h2>
+          <p class="titulo-paragrafo">As provas recreativas são um verdadeiro espetáculo de provas dos mais variados tipos, onde os alunos preparam bolos, resolvem enigmas, etc...</p>
+        </div>
+        <ul class="imagens-ilustrativas">
+          <li><img src="{% static 'provas-gincana/recreativa/imagem-recreativa01.jpg' %}" alt="Gincana"></li>
+          <li><img src="{% static 'provas-gincana/recreativa/imagem-recreativa02.jpg' %}" alt="Gincana"></li>
+          <li><img src="{% static 'provas-gincana/recreativa/imagem-recreativa03.jpg' %}" alt="Gincana"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prova-esportiva prova-gincana container" data-prova-gincana="container">
+      <div class="prova-esportiva-content">
+        <div class="titulo-container">
+          <h2 class="titulo titulo-medium">
+            Esportiva
+            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+          </h2>
+          <p class="titulo-paragrafo">Nas provas esportivas as 4 turmas do técnico integrado competem entre si em dois esportes selecionados pelos mesmos</p>
+        </div>
+        <h3 class="titulo titulo-jogadores">Nossos jogadores</h3>
+        <div class="esportes-container">
+          <div class="esporte-jogadores-container">
+            <h4 class="titulo titulo-esporte">Vôlei</h4>
+            <ul class="lista-jogadores">
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+            </ul>
           </div>
-          <div>
-            <div><img src="{% static 'slide/slide-sangue.jpg' %}" alt=""></div>
+          <div class="esporte-jogadores-container">
+            <h4 class="titulo titulo-esporte">Futsal</h4>
+            <ul class="lista-jogadores">
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+            </ul>
           </div>
-          <div>
-            <div><img src="{% static 'slide/slide-lacres.jpg' %}" alt=""></div>
+          <div class="esporte-jogadores-container">
+            <h4 class="titulo titulo-esporte">Basquete</h4>
+            <ul class="lista-jogadores">
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+              <li><img src="{% static 'provas-gincana/esportiva/perfil-vazio.png' %}" alt="Foto de perfil"></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="provas-buttons">
-        <button class="button-prev"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
-        <button class="button-next"><img src="{% static 'icones/icone-seta02.svg' %}" alt="Seta"></button>
+    </div>
+
+    <div class="prova-cultural prova-gincana container" data-prova-gincana="container">
+      <div class="prova-cultural-content">
+        <div class="titulo-container">
+          <h2 class="titulo titulo-medium">
+            Cultural
+            <img src="{% static 'logo-tipos/logo-google-fotos.svg' %}" alt="Logo Google Fotos">
+          </h2>
+          <p class="titulo-paragrafo">As provas culturais da gincana da UTFPR, são um verdadeiro espetáculo, onde todas as turmas mostram seus maiores talentos</p>
+        </div>
+        <div class="cultural-videos">
+          <button class="cultural-videos-button"></button>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-musica.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Música</h3>
+          </div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="danca">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-danca.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Dança</h3>
+          </div>
+          <div class="video-cultural-container">
+            <div data-video-cultural="musica">
+              <video playsinline loop src="{% static 'provas-gincana/cultural/videos/video-cultural-cover.mp4' %}"></video>
+            </div>
+            <h3 class="titulo-video">Cover</h3>
+          </div>
+        </div>
       </div>
     </div>
   </article>
