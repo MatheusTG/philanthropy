@@ -49,7 +49,7 @@
   gap: var(--spacing-medium03);
   position: relative;
   padding-left: var(--spacing-small05);
-  padding-right: var(--spacing-small05);
+  width: max-content;
 }
 
 [data-video-cultural] {
@@ -110,15 +110,12 @@
   .prova-cultural .cultural-videos {
     padding-left: 0px;
     justify-content: center;
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
   }
 }
 
 @media (max-width: 800px) {
-  .prova-cultural .cultural-videos {
-    overflow-x: auto;
-    padding-bottom: var(--spacing-small06);
-    justify-content: initial;
-  }
   .cultural-videos-button {
     display: none;
   }
@@ -131,5 +128,11 @@
   .prova-cultural .titulo-container,
   .prova-cultural .cultural-videos {
     padding-left: var(--spacing-small05);
+  }
+  .prova-cultural .cultural-videos {
+    overflow-x: auto;
+    padding-bottom: var(--spacing-small06);
+    width: initial;
+    justify-content: start;
   }
 }
