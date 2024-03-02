@@ -122,12 +122,17 @@
   .prova-cultural .video-cultural-container .titulo-video {
     justify-self: initial;
   }
+  .prova-cultural .cultural-videos {
+    padding: 0px;
+    margin: auto;
+  }
 }
 
 @media (max-width: 720px) {
   .prova-cultural .titulo-container,
   .prova-cultural .cultural-videos {
     padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
   }
   .prova-cultural .cultural-videos {
     overflow-x: auto;

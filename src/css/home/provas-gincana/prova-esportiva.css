@@ -40,7 +40,7 @@
 .prova-esportiva .esportes-container {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-medium05);
+  gap: var(--spacing-medium01) var(--spacing-medium05);
 }
 
 .prova-esportiva .titulo-esporte {
@@ -83,6 +83,8 @@
   }
   .prova-esportiva .lista-jogadores {
     max-width: 100%;
+    border-bottom: 2px solid var(--color07);
+    padding-bottom: var(--spacing-medium02);
   }
   .prova-esportiva .lista-jogadores li {
     width: 60px;
