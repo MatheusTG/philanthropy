@@ -69,6 +69,7 @@
 @media (max-width: 600px) {
   .provas-gincana-container > .prova-gincana {
     animation: initial;
+    height: max-content !important;
   }
   .prova-gincana > div > * {
     animation: fadeInRight 1s forwards;

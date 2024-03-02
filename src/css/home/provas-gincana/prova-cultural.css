@@ -16,9 +16,6 @@
   padding-left: var(--spacing-small05);
   padding-right: var(--spacing-small05);
 }
-.prova-cultural .cultural-videos {
-  padding-left: var(--spacing-small05);
-}
 
 /* Títulos */
 .prova-cultural .titulo-container {
@@ -50,8 +47,9 @@
   grid-row: 2;
   display: flex;
   gap: var(--spacing-medium03);
-  width: max-content;
   position: relative;
+  padding-left: var(--spacing-small05);
+  padding-right: var(--spacing-small05);
 }
 
 [data-video-cultural] {
@@ -111,7 +109,6 @@
   }
   .prova-cultural .cultural-videos {
     padding-left: 0px;
-    width: initial;
     justify-content: center;
   }
 }
@@ -120,6 +117,7 @@
   .prova-cultural .cultural-videos {
     overflow-x: auto;
     padding-bottom: var(--spacing-small06);
+    justify-content: initial;
   }
   .cultural-videos-button {
     display: none;
