@@ -13,7 +13,7 @@
   max-width: 40ch;
 }
 
-.contato-email-container .formulario-contato-email {
+.formulario-contato-email {
   grid-column: 3;
   display: grid;
   gap: var(--spacing-small05);
@@ -66,7 +66,7 @@
   color: var(--color-p32-02);
 }
 
-.imagem-natalia-luana {
+.imagem-natalia-luana img {
   position: absolute;
   left: 10%;
   bottom: 0px;
@@ -74,4 +74,43 @@
   opacity: 0.2;
   z-index: 1;
   pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+  .contato-email-container {
+    padding: var(--spacing-large02) var(--spacing-medium05);
+  }
+  .contato-email-container .titulo-container {
+    padding-bottom: var(--spacing-small05);
+    margin-bottom: var(--spacing-small05);
+    border-bottom: 2px solid var(--color04);
+  }
+  .imagem-natalia-luana {
+    overflow: hidden;
+  }
+  .imagem-natalia-luana img {
+    width: 80%;
+    opacity: 0.15;
+  }
+}
+
+@media (max-width: 720px) {
+  .contato-email-container {
+    padding: var(--spacing-large01) var(--spacing-small05);
+  }
+}
+
+@media (max-width: 600px) {
+  .formulario-contato-email {
+    display: block;
+  }
+  .formulario-contato-email input,
+  .formulario-contato-email textarea {
+    margin-bottom: var(--spacing-small05);
+  }
+  .imagem-natalia-luana img {
+    width: 140%;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
 }
