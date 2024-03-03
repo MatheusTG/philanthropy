@@ -204,6 +204,8 @@ class Slide {
     this.setSlidePosition();
     this.transition(true);
     this.changeSlide(3);
+
+    return this
   }
 }
 

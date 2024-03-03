@@ -1,0 +1,239 @@
+.footer-container .titulo {
+  color: var(--color00);
+}
+
+.footer-content {
+  display: flex;
+  gap: var(--spacing-large03);
+}
+
+.footer {
+  padding: var(--spacing-large02) var(--spacing-small05) var(--spacing-large01)
+    var(--spacing-small05);
+  position: relative;
+}
+
+.footer > * {
+  grid-column: 2/4;
+}
+
+.cassino-redes {
+  width: 400px;
+}
+
+.titulo-footer {
+  padding-bottom: var(--spacing-small03);
+  margin-bottom: var(--spacing-small05);
+  border-bottom: 2px solid var(--color10);
+}
+
+.subtitulo-footer {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-small04);
+}
+
+.mapa-site {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  gap: var(--spacing-small03);
+}
+
+.mapa-site li {
+  display: flex;
+  background-color: var(--color11);
+  padding: var(--spacing-small02) var(--spacing-small04);
+  border-radius: var(--border-radius-medium);
+}
+
+.mapa-site li a:nth-child(2) {
+  padding-left: var(--spacing-small04);
+  margin-left: var(--spacing-small04);
+  border-left: 2px solid #222;
+}
+.mapa-site a:hover {
+  color: var(--color07);
+}
+
+.mapa-site a {
+  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  color: var(--color03);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mapa-site a::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-p32-02),
+    var(--color-p32-01)
+  );
+  margin-right: var(--spacing-small02);
+}
+
+.footer::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('../../img/backgrounds/codigos-matriz.jpg');
+  background-repeat: repeat-x;
+  background-size: 33%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  transform: rotate(180deg);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Copy */
+.copy {
+  background-color: var(--color11);
+  padding: var(--spacing-medium01) var(--spacing-small05);
+}
+
+.copy-content {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  align-items: end;
+  justify-items: start;
+  gap: var(--spacing-small03);
+  position: relative;
+}
+
+.copy .logo-footer {
+  width: 80px;
+  grid-row: span 2;
+  padding-right: var(--spacing-small05);
+}
+
+.copy .copyright,
+.copy .localizacao-utfpr {
+  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  color: var(--color00);
+}
+
+.developer-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small03);
+  background-color: var(--color10);
+  background-color: #222;
+  padding: var(--spacing-small02) var(--spacing-small04);
+  border-radius: var(--border-radius-medium);
+  text-decoration: none;
+}
+
+.developer-container:hover .developer-seta {
+  transform: translate3d(4px, 0, 0);
+}
+
+.developer-container:hover .github-developer {
+  color: var(--color00);
+}
+
+.developer-seta {
+  transition: 0.3s;
+}
+
+.developer-container div {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-small02);
+  font: 500 1rem/1.5 var(--font-IBM), sans-serif;
+  color: var(--color04);
+  letter-spacing: 0.5px;
+}
+
+.developer-container .icone-developer {
+  width: 24px;
+}
+
+.developer-container .logo-github {
+  width: 16px;
+}
+
+.localizacao-utfpr {
+  grid-column: 2/-1;
+}
+
+.footer-container .logo-utfpr {
+  position: absolute;
+  bottom: -32px;
+  right: 0px;
+  background-color: var(--color00);
+  padding: var(--spacing-small03) var(--spacing-small05) var(--spacing-small02)
+    var(--spacing-small05);
+  width: 140px;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+@media (max-width: 1200px) {
+  .footer-container .logo-utfpr {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer,
+  .copy {
+    padding-left: var(--spacing-medium05);
+    padding-right: var(--spacing-medium05);
+  }
+}
+
+@media (max-width: 820px) {
+  .footer-content {
+    gap: var(--spacing-large01);
+  }
+  .copy-content {
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 50px 50px 1fr;
+  }
+  .copy .logo-footer {
+    grid-row: span 2;
+    width: 100%;
+  }
+  .copy .localizacao-utfpr {
+    grid-column: 1/-1;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    padding-top: var(--spacing-large01);
+  }
+  .footer,
+  .copy {
+    padding-left: var(--spacing-small05);
+    padding-right: var(--spacing-small05);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+  .copy .logo-footer {
+    width: 80px;
+    grid-column: 1/-1 !important;
+    margin-bottom: var(--spacing-small05);
+  }
+  .developer-container {
+    grid-column: 1/-1;
+  }
+  .footer-container .logo-utfpr {
+    display: block;
+    border-radius: var(--border-radius-medium);
+    left: 112px;
+    top: var(--spacing-small04);
+    bottom: initial;
+    opacity: 0.2;
+  }
+}

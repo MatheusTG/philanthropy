@@ -76,10 +76,15 @@
   pointer-events: none;
 }
 
-@media (max-width: 1000px) {
+/* Evita que o título fique grudado no formulário */
+@media (max-width: 1060px) {
   .contato-email-container {
+    display: block;
     padding: var(--spacing-large02) var(--spacing-medium05);
   }
+}
+
+@media (max-width: 1000px) {
   .contato-email-container .titulo-container {
     padding-bottom: var(--spacing-small05);
     margin-bottom: var(--spacing-small05);
