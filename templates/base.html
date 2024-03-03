@@ -7,6 +7,9 @@
 
   <body>
     {% block content %}{% endblock %}
+    <footer class="footer-container">
+      {% include 'partials/_footer.html' %}
+    </footer>
 
     {% if debug %}
       <script type="module" src="http://localhost:5173/src/ts/main.ts"></script>
