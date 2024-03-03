@@ -4,13 +4,8 @@
   overflow-x: hidden;
 }
 
-.provas-gincana-container::before {
-  content: '';
-  width: 40%;
-  height: 2px;
-  background-color: var(--color10);
-  position: absolute;
-  top: 0px;
+.provas-gincana-container.active {
+  opacity: 1;
 }
 
 .provas-gincana-container .provas-controls {
@@ -47,6 +42,20 @@
 
 .provas-gincana-container > .prova-gincana > * {
   grid-column: 2/4;
+  opacity: 0;
+}
+
+.provas-gincana-container.active > .prova-gincana.active > * {
+  animation: fadeInRight 1s forwards;
+}
+
+.provas-gincana-container::before {
+  content: '';
+  width: 40%;
+  height: 2px;
+  background-color: var(--color10);
+  position: absolute;
+  top: 0px;
 }
 
 .provas-gincana-container > .prova-gincana.active {

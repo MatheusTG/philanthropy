@@ -7,13 +7,13 @@ export default class ScrollAnima {
     distance: number;
   }[];
   activeClass: string;
-  constructor(selectorSections: string) {
+  constructor(selectorSections: string, activeClass: string) {
     const sections = document.querySelectorAll(selectorSections);
     this.sections = sections ? <HTMLElement[]>Array.from(sections) : [];
 
     this.sectionsDistance = [];
 
-    this.activeClass = 'active';
+    this.activeClass = activeClass;
 
     this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }

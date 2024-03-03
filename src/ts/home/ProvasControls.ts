@@ -41,6 +41,6 @@ export default class ProvasControls {
     this.addControlsEvent();
     this.activeProva(3);
 
-    return this
+    return this;
   }
 }

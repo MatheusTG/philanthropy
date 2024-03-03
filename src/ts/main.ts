@@ -22,7 +22,7 @@ const menu = new Menu(
 );
 menu.init();
 
-const scrollAnima = new ScrollAnima('[data-anima="scroll"]');
+const scrollAnima = new ScrollAnima('[data-anima="scroll"]', 'active');
 scrollAnima.init();
 
 const focusVideo = new FocusVideo(
