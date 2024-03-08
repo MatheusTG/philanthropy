@@ -20,3 +20,6 @@
 @import './home/contato-email.css';
 
 @import './global/footer.css';
+
+/* User */
+@import './user/cadastro.css';

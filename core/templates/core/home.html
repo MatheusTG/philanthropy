@@ -309,4 +309,62 @@
       <img src="{% static 'backgrounds/natalia-luana.png' %}" alt="Vencedoras">
     </div>
   </section>
+
+  <section class="login-cadastro-container container">
+    <form class="cadastro-modal">
+      <div class="cadastro-content">
+        <div class="header-login-cadastro">
+          <h2 class="titulo">Cadastro</h2>
+          <a href="#">
+            Login
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
+        </div>
+        <div class="input-container">
+          <label for="cadastro-nome">Nome</label>
+          <input type="text" id="cadastro-nome" name="cadastro-nome">
+        </div>
+        <div class="input-container">
+          <label for="cadastro-sobrenome">Sobrenome<span class="texto-input-opicional">*opcional</span></label>
+          <input type="text" id="cadastro-sobrenome" name="cadastro-sobrenome">
+        </div>
+        <div class="input-container">
+          <label for="cadastro-email">Email</label>
+          <input type="email" id="cadastro-email" name="cadastro-email">
+        </div>
+        <div class="input-container">
+          <label for="cadastro-senha">Senha</label>
+          <input type="password" id="cadastro-senha" name="cadastro-senha">
+        </div>
+        <div class="input-container">
+          <label for="cadastro-c-senha">Confirme sua senha</label>
+          <input type="password" id="cadastro-senha" name="cadastro-senha">
+        </div>
+        <button class="cadastro-button">Cadastrar</button>
+      </div>
+
+      <div class="login-content">
+        <div class="header-login-cadastro">
+          <h2 class="titulo">Login</h2>
+          <a href="#">
+            Cadastro
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
+        </div>
+        <div class="input-container">
+          <label for="cadastro-nome">Email</label>
+          <input type="email" id="login-email" name="login-nome">
+        </div>
+        <div class="input-container">
+          <label for="senha-nome">Senha</label>
+          <input type="password" id="login-senha" name="login-senha">
+        </div>
+        <button class="cadastro-button">Entrar</button>
+      </div>
+
+      <button class="fechar-login-cadastro">
+        <img src="{% static 'icones/icone-fechar.svg' %}" alt="Botão de fechar">
+      </button>
+    </form>
+  </section>
 {% endblock %}
