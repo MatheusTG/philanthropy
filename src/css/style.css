@@ -22,6 +22,6 @@
 
 
 /* User */
-@import './user/login-cadastro.css';
-@import './user/cadastro.css';
-@import './user/login.css';
+@import './accounts/login-cadastro.css';
+@import './accounts/cadastro.css';
+@import './accounts/login.css';

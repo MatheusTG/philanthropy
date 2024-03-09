@@ -173,7 +173,7 @@
   }
 }
 
-body > *:not(.login-cadastro-container) {
+/* body > *:not(.login-cadastro-container) {
   overflow: hidden;
   filter: blur(4px);
   opacity: 0.4;
@@ -183,4 +183,4 @@ body > *:not(.login-cadastro-container) {
 
 body > *:not(.header-slide-container, .login-cadastro-container) {
   display: none;
-}
+} */
