@@ -1,10 +1,11 @@
 .login-cadastro-container {
   box-sizing: border-box;
   position: absolute;
-  top: 80px;
+  top: 0%;
   right: 10vw;
   z-index: 500;
-  width: 48%;
+  width: minmax(360px, 40%);
+  margin: 8vh 0;
 }
 
 .login-content,
@@ -19,8 +20,8 @@
   padding: var(--spacing-medium05);
   border-radius: var(--border-radius-medium);
   border: 2px solid var(--color10);
-  max-width: 100%;
-  min-width: 400px;
+  max-width: calc(100vw - 40px);
+  min-width: 48vw;
 }
 
 .login-content.active,
@@ -76,7 +77,8 @@
   color: var(--color00);
 }
 
-.login-cadastro-container input {
+.login-cadastro-container input,
+.login-cadastro-container input:-webkit-autofill:focus {
   box-sizing: border-box;
   width: 100%;
   padding: var(--spacing-small03);
@@ -87,8 +89,16 @@
   color: var(--color05);
 }
 
+/* Cor do texto do autocomplete */
+.login-cadastro-container input:-webkit-autofill {
+  -webkit-text-fill-color: var(--color05) !important;
+  -webkit-box-shadow: 0 0 0 30px var(--color10) inset;
+  caret-color: white;
+}
+
 .login-cadastro-container input:focus {
-  background-color: var(--color10);
+  background-color: var(--color10) !important;
+  color: var(--color00) !important;
 }
 
 .login-cadastro-button {
@@ -104,11 +114,73 @@
   border: none;
 }
 
-.fechar-login-cadastro:hover {
+.fechar-login-cadastro:hover img {
   opacity: 0.6;
 }
 
+@media (max-width: 1200px) {
+  .login-cadastro-container {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .login-cadastro-container {
+    right: initial;
+    top: 0px;
+    width: 100%;
+    padding: 20px;
+    opacity: 0.95;
+  }
+  .fechar-login-cadastro {
+    top: var(--spacing-medium03);
+    right: var(--spacing-medium03);
+  }
+  .login-cadastro-container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .login-content,
+  .cadastro-content {
+    padding: var(--spacing-medium04) var(--spacing-medium02);
+  }
+}
+
+@media (max-width: 600px) {
+  .login-content.active,
+  .cadastro-content.active {
+    display: block;
+  }
+  .login-cadastro-container .input-container {
+    margin-bottom: var(--spacing-small05);
+  }
+  .fechar-login-cadastro {
+    top: var(--spacing-small02);
+    right: var(--spacing-small02);
+    background-color: var(--color11);
+    padding: 8px;
+    border: 2px solid var(--color10);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-content,
+  .cadastro-content {
+    padding: var(--spacing-medium03) var(--spacing-small06);
+  }
+}
+
 body > *:not(.login-cadastro-container) {
-  filter: blur(8px);
+  overflow: hidden;
+  filter: blur(4px);
   opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+
+body > *:not(.header-slide-container, .login-cadastro-container) {
+  display: none;
 }
