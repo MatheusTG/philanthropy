@@ -161,3 +161,15 @@ ul {
   width: 40px;
   cursor: pointer;
 }
+
+.input-label {
+  display: block;
+  font: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
+  margin-bottom: var(--spacing-small01);
+}
+
+.texto-input-opicional {
+  color: var(--color07);
+  font: 500 0.875rem/1.5 var(--font-barlow), sans-serif;
+  margin-left: var(--spacing-small02);
+}

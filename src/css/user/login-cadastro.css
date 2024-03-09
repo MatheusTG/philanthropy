@@ -1,0 +1,114 @@
+.login-cadastro-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 80px;
+  right: 10vw;
+  z-index: 500;
+  width: 48%;
+}
+
+.login-content,
+.cadastro-content {
+  box-sizing: border-box;
+  grid-column: 2/4;
+  display: none;
+  grid-template-columns: 1fr 1fr 1.5fr max-content;
+  gap: var(--spacing-small05);
+  flex-wrap: wrap;
+  background-color: var(--color11);
+  padding: var(--spacing-medium05);
+  border-radius: var(--border-radius-medium);
+  border: 2px solid var(--color10);
+  max-width: 100%;
+  min-width: 400px;
+}
+
+.login-content.active,
+.cadastro-content.active {
+  display: grid;
+}
+
+.header-login-cadastro {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-small03);
+  margin-bottom: var(--spacing-small03);
+  position: relative;
+}
+
+.header-login-cadastro::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  background-color: var(--color10);
+  height: 1px;
+  width: 70%;
+}
+
+.link-login-cadastro {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small02);
+  color: var(--color06);
+  text-decoration: none;
+  font: bold 1.125rem/1.5 var(--font-barlow), sans-serif;
+  border: 2px solid var(--color-p32-01);
+  padding: var(--spacing-small01) var(--spacing-small04);
+  border-radius: var(--border-radius-large);
+}
+
+.link-login-cadastro:hover {
+  background-color: rgba(9, 122, 7, 0.4);
+}
+
+.link-login-cadastro img {
+  transition: 0.3s;
+}
+
+.link-login-cadastro:hover img {
+  transform: translate3d(4px, 0, 0);
+}
+
+.login-cadastro-container .titulo,
+.login-cadastro-container label {
+  color: var(--color00);
+}
+
+.login-cadastro-container input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--spacing-small03);
+  border-radius: var(--border-radius-small);
+  border: 2px solid var(--color08);
+  background-color: transparent;
+  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  color: var(--color05);
+}
+
+.login-cadastro-container input:focus {
+  background-color: var(--color10);
+}
+
+.login-cadastro-button {
+  padding: var(--spacing-small02) var(--spacing-small04);
+  align-self: end;
+}
+
+.fechar-login-cadastro {
+  position: absolute;
+  top: var(--spacing-medium01);
+  right: var(--spacing-medium01);
+  background-color: transparent;
+  border: none;
+}
+
+.fechar-login-cadastro:hover {
+  opacity: 0.6;
+}
+
+body > *:not(.login-cadastro-container) {
+  filter: blur(8px);
+  opacity: 0.4;
+}

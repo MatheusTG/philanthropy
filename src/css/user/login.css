@@ -1,0 +1,7 @@
+.login-content .input-container-email {
+  grid-column: 1/-1;
+}
+
+.login-content .input-container-senha {
+  grid-column: 1/-2;
+}
