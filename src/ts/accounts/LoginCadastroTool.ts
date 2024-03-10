@@ -79,7 +79,7 @@ export default class LoginCadastroTool {
       if (contentElement.dataset.accounts === 'openLogin') {
         this.activeLogin();
       }
-      if (contentElement.dataset.accounts === 'openCadastro') { 
+      if (contentElement.dataset.accounts === 'openCadastro') {
         this.activeCadastro();
       }
     }
@@ -87,7 +87,7 @@ export default class LoginCadastroTool {
 
   activeLogin() {
     if (this.loginContent && this.cadastroContent) {
-      history.replaceState(null, '', '/accounts/login/');
+      history.pushState(null, '', '/accounts/login/');
       this.cadastroContent.classList.remove(this.activeClass);
       this.loginContent.classList.add(this.activeClass);
     }
@@ -95,7 +95,7 @@ export default class LoginCadastroTool {
 
   activeCadastro() {
     if (this.loginContent && this.cadastroContent) {
-      history.replaceState(null, '', '/accounts/cadastro/');
+      history.pushState(null, '', '/accounts/cadastro/');
       this.loginContent.classList.remove(this.activeClass);
       this.cadastroContent.classList.add(this.activeClass);
     }
@@ -107,6 +107,8 @@ export default class LoginCadastroTool {
     this.outsideClick.removeOutsideEvents();
 
     if (this.container) this.container.classList.remove(this.activeClass);
+
+    history.pushState(null, '', '/');
   }
 
   addLoginCadastroToolEvents() {
