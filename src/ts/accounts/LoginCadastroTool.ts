@@ -1,3 +1,5 @@
+import OutsideClick from '../helper/OutsideClick';
+
 export default class LoginCadastroTool {
   buttonOpenLogin: HTMLElement[];
   buttonOpenCadastro: HTMLElement[];
@@ -7,6 +9,7 @@ export default class LoginCadastroTool {
   cadastroContent: HTMLElement | null;
   userEvents: string[];
   activeClass: 'active';
+  outsideClick: OutsideClick;
   constructor(
     selectorButtonOpenLogin: string,
     selectorButtonOpenCadastro: string,
@@ -46,6 +49,12 @@ export default class LoginCadastroTool {
     this.userEvents = ['click', 'touchstart'];
 
     this.activeClass = 'active';
+
+    this.outsideClick = new OutsideClick(
+      selectorContainer,
+      this.userEvents,
+      () => this.closeLoginCadastro()
+    );
   }
 
   addBlur(active: boolean) {
@@ -54,6 +63,10 @@ export default class LoginCadastroTool {
   }
 
   activeContainer() {
+    // Remove os evendo de outSideClick caso existam e adiciona novos
+    this.outsideClick.removeOutsideEvents();
+    this.outsideClick.init();
+
     // Borrando o fundo para destacar o formulário
     this.addBlur(true);
 
@@ -94,10 +107,10 @@ export default class LoginCadastroTool {
     }
   }
 
-  closeLoginCadastro(event: Event) {
-    event?.preventDefault();
-
+  closeLoginCadastro() {
     this.addBlur(false);
+
+    this.outsideClick.removeOutsideEvents();
 
     if (this.container) this.container.classList.remove(this.activeClass);
   }
