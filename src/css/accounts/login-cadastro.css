@@ -1,11 +1,21 @@
 .login-cadastro-container {
+  display: block;
+  visibility: hidden;
   box-sizing: border-box;
   position: absolute;
   top: 0%;
-  right: 10vw;
+  right: 5vw;
   z-index: 500;
   width: minmax(360px, 40%);
   margin: 8vh 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.login-cadastro-container.active {
+  visibility: visible;
+  right: 10vw;
+  opacity: 1;
 }
 
 .login-content,
@@ -126,10 +136,13 @@
 
 @media (max-width: 1000px) {
   .login-cadastro-container {
-    right: initial;
+    right: initial !important;
     top: 0px;
     width: 100%;
     padding: 20px;
+    opacity: 0;
+  }
+  .login-cadastro-container.active {
     opacity: 0.95;
   }
   .fechar-login-cadastro {
@@ -172,15 +185,3 @@
     padding: var(--spacing-medium03) var(--spacing-small06);
   }
 }
-
-/* body > *:not(.login-cadastro-container) {
-  overflow: hidden;
-  filter: blur(4px);
-  opacity: 0.4;
-  pointer-events: none;
-  user-select: none;
-}
-
-body > *:not(.header-slide-container, .login-cadastro-container) {
-  display: none;
-} */

@@ -4,6 +4,7 @@ import Menu from './home/Menu';
 import ScrollAnima from './helper/ScrollAnima';
 import FocusVideo from './home/FocusVideo';
 import ProvasControls from './home/ProvasControls';
+import LoginCadastroTool from './accounts/LoginCadastroTool';
 
 // Slides dos slide
 const slide = new SlideConfig('.slide-container', '.slide', '.slide-controls');
@@ -36,3 +37,13 @@ const provasControls = new ProvasControls(
   '[data-prova-gincana="container"]'
 );
 provasControls.init();
+
+const loginTool = new LoginCadastroTool(
+  '[data-accounts="openLogin"]', // botões para abrir o login
+  '[data-accounts="openCadastro"]', // botões para abrir o cadastro
+  '[data-accounts="close"]', // Botão de fechar no canto
+  '[data-accounts="container"]', // Container do furmulário
+  '[data-accounts="loginContent"]', // Content de login
+  '[data-accounts="cadastroContent"]' // Content de Cadastro
+);
+loginTool.init();

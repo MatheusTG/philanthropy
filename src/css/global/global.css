@@ -173,3 +173,15 @@ ul {
   font: 500 0.875rem/1.5 var(--font-barlow), sans-serif;
   margin-left: var(--spacing-small02);
 }
+
+body.blur .header-slide-container {
+  overflow: hidden;
+  filter: blur(4px);
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.blur > *:not(.header-slide-container, .login-cadastro-container) {
+  display: none;
+}
