@@ -62,7 +62,9 @@ export default class LoginCadastroTool {
     else document.body.classList.remove('blur');
   }
 
-  activeContainer() {
+  activeContainer(event: Event) {
+    event.preventDefault();
+
     // Remove os evendo de outSideClick caso existam e adiciona novos
     this.outsideClick.removeOutsideEvents();
     this.outsideClick.init();
@@ -71,36 +73,28 @@ export default class LoginCadastroTool {
     this.addBlur(true);
 
     if (this.container) this.container.classList.add(this.activeClass);
+
+    const contentElement = event.currentTarget;
+    if (contentElement instanceof HTMLElement) {
+      if (contentElement.dataset.accounts === 'openLogin') {
+        this.activeLogin();
+      }
+      if (contentElement.dataset.accounts === 'openCadastro') { 
+        this.activeCadastro();
+      }
+    }
   }
 
-  openLogin(event: Event) {
-    event.preventDefault();
-
-    this.activeContainer();
-
-    if (
-      event.currentTarget instanceof HTMLElement &&
-      event.currentTarget.dataset.accounts === 'openLogin' &&
-      this.loginContent &&
-      this.cadastroContent
-    ) {
+  activeLogin() {
+    if (this.loginContent && this.cadastroContent) {
       history.replaceState(null, '', '/accounts/login/');
       this.cadastroContent.classList.remove(this.activeClass);
       this.loginContent.classList.add(this.activeClass);
     }
   }
 
-  openCadastro(event: Event) {
-    event.preventDefault();
-
-    this.activeContainer();
-
-    if (
-      event.currentTarget instanceof HTMLElement &&
-      event.currentTarget.dataset.accounts === 'openCadastro' &&
-      this.loginContent &&
-      this.cadastroContent
-    ) {
+  activeCadastro() {
+    if (this.loginContent && this.cadastroContent) {
       history.replaceState(null, '', '/accounts/cadastro/');
       this.loginContent.classList.remove(this.activeClass);
       this.cadastroContent.classList.add(this.activeClass);
@@ -118,10 +112,10 @@ export default class LoginCadastroTool {
   addLoginCadastroToolEvents() {
     this.userEvents.forEach((userEvent) => {
       this.buttonOpenLogin.forEach((button) => {
-        button.addEventListener(userEvent, this.openLogin);
+        button.addEventListener(userEvent, this.activeContainer);
       });
       this.buttonOpenCadastro.forEach((button) => {
-        button.addEventListener(userEvent, this.openCadastro);
+        button.addEventListener(userEvent, this.activeContainer);
       });
 
       this.buttonClose?.addEventListener(userEvent, this.closeLoginCadastro);
@@ -129,8 +123,7 @@ export default class LoginCadastroTool {
   }
 
   bindEvents() {
-    this.openLogin = this.openLogin.bind(this);
-    this.openCadastro = this.openCadastro.bind(this);
+    this.activeContainer = this.activeContainer.bind(this);
     this.closeLoginCadastro = this.closeLoginCadastro.bind(this);
   }
 
