@@ -48,14 +48,14 @@
   margin-bottom: var(--spacing-small06);
 }
 
-.header-logo {
-  width: 4rem;
-}
-
-.menu-perfil-container {
+.header-menu-perfil {
   display: flex;
   align-items: center;
   gap: var(--spacing-small06);
+}
+
+.header-logo {
+  width: 4rem;
 }
 
 .header-menu,
@@ -161,11 +161,12 @@
     display: block;
     padding: var(--spacing-small05);
   }
-  .header .menu-perfil-container {
-    margin-left: auto;
-  }
   .header-menu {
     order: 1;
+    margin-left: auto;
+  }
+  .header-podio {
+    margin-left: initial;
   }
   .header .login-cadastro {
     display: none;

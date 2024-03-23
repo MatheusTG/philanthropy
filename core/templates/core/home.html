@@ -313,8 +313,14 @@
     </div>
   </section>
 
-  <form class="login-cadastro-container" data-accounts="container">
-    <div class="cadastro-content" data-accounts="cadastroContent">
+  <div class="login-cadastro-container" data-accounts="container">
+    <form 
+      action="{% url 'cadastro' %}"
+      method="POST"
+      class="cadastro-content" 
+      data-accounts="cadastroContent"
+    >
+      {% csrf_token %}
       <div class="header-login-cadastro">
         <h2 class="titulo titulo-medium">Cadastro</h2>
         <a href="{% url 'login' %}" class="link-login-cadastro" data-accounts="openLogin">
@@ -346,9 +352,15 @@
         <input type="password" id="cadastro-c-senha" name="cadastro-c-senha">
       </div>
       <button class="login-cadastro-button button">Cadastrar</button>
-    </div>
+    </form>
   
-    <div class="login-content" data-accounts="loginContent">
+    <form 
+      action="{% url 'login' %}"
+      method="POST"
+      class="login-content"
+      data-accounts="loginContent"
+    >
+      {% csrf_token %}
       <div class="header-login-cadastro">
         <h2 class="titulo titulo-medium">Login</h2>
         <a href="{% url 'cadastro' %}" class="link-login-cadastro" data-accounts="openCadastro">
@@ -358,17 +370,17 @@
       </div>
       <div class="input-container input-container-email">
         <label for="login-email" class="input-label">Email</label>
-        <input type="email" id="login-email" name="login-nome">
+        <input type="email" id="login-email" name="login-email">
       </div>
       <div class="input-container input-container-senha">
-        <label for="senha-nome" class="input-label">Senha</label>
+        <label for="login-senha" class="input-label">Senha</label>
         <input type="password" id="login-senha" name="login-senha">
       </div>
       <button type="submit" class="login-cadastro-button button">Entrar</button>
-    </div>
+    </form>
 
     <button type="button" class="fechar-login-cadastro" data-accounts="close">
       <img src="{% static 'icones/icone-fechar.svg' %}" alt="Botão de fechar">
     </button>
-  </form>
+  </div>
 {% endblock %}

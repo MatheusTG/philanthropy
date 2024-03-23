@@ -62,8 +62,19 @@ export default class LoginCadastroTool {
     else document.body.classList.remove('blur');
   }
 
-  activeContainer(event: Event) {
-    event.preventDefault();
+  activeContainer(event?: Event) {
+    let loginOrCadastro = 'openLogin';
+    if (event) {
+      event.preventDefault();
+
+      const contentElement = event.currentTarget;
+      if (
+        contentElement instanceof HTMLElement &&
+        typeof contentElement.dataset.accounts === 'string'
+      ) {
+        loginOrCadastro = contentElement.dataset.accounts;
+      }
+    }
 
     // Remove os evendo de outSideClick caso existam e adiciona novos
     this.outsideClick.removeOutsideEvents();
@@ -74,14 +85,11 @@ export default class LoginCadastroTool {
 
     if (this.container) this.container.classList.add(this.activeClass);
 
-    const contentElement = event.currentTarget;
-    if (contentElement instanceof HTMLElement) {
-      if (contentElement.dataset.accounts === 'openLogin') {
-        this.activeLogin();
-      }
-      if (contentElement.dataset.accounts === 'openCadastro') {
-        this.activeCadastro();
-      }
+    if (loginOrCadastro === 'openLogin') {
+      this.activeLogin();
+    }
+    if (loginOrCadastro === 'openCadastro') {
+      this.activeCadastro();
     }
   }
 
@@ -132,6 +140,10 @@ export default class LoginCadastroTool {
   init() {
     this.bindEvents();
     this.addLoginCadastroToolEvents();
+
+    if (window.location.pathname === '/accounts/login/') {
+      this.activeContainer();
+    }
 
     return this;
   }

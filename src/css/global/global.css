@@ -111,6 +111,9 @@ ul {
   font-size: 2rem;
 }
 @media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
   .titulo-large {
     font-size: 3rem;
   }
