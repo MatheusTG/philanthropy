@@ -143,6 +143,11 @@ export default class LoginCadastroTool {
 
     if (window.location.pathname === '/accounts/login/') {
       this.activeContainer();
+      this.activeLogin();
+    }
+    if (window.location.pathname === '/accounts/cadastro/') {
+      this.activeContainer();
+      this.activeCadastro();
     }
 
     return this;

@@ -314,91 +314,106 @@
   </section>
 
   <div class="login-cadastro-container" data-accounts="container">
-    <form 
-      action="{% url 'cadastro' %}"
-      method="POST"
-      class="cadastro-content" 
-      data-accounts="cadastroContent"
-    >
-      {% csrf_token %}
-      <div class="header-login-cadastro">
-        <h2 class="titulo titulo-medium">Cadastro</h2>
-        <a href="{% url 'login' %}" class="link-login-cadastro" data-accounts="openLogin">
-          Login
-          <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
-        </a>
+    {% if user.is_authenticated %}
+      <div class="logout-container">
+        <a href="{% url 'logout' %}" class="button">Logout</a>
       </div>
-
-      {% for field in register_form %}
-        <div class="input-container" id="{{ field.id_for_label }}">
-          <label class="input-label" for="{{ field.id_for_label}}">
-            {{ field.label }}
-            <span class="texto-input-opicional">{{ field.help_text }}</span>
-          </label>
-          {{ field }}
-
-          {% for error in field.errors %}
-            {% if field.errors %}
-              <p class="errorlist-container">
-                <img src="{% static 'icones/icone-erro-form.svg' %}">
-                <span class="error-message">{{ error }}</span>
-              </p>
-            {% endif %}
-          {% endfor %}
+    {% else %}
+      <form 
+        action="{% url 'cadastro' %}"
+        method="POST"
+        class="cadastro-content" 
+        data-accounts="cadastroContent"
+      >
+        {% csrf_token %}
+        <div class="header-login-cadastro">
+          <h2 class="titulo titulo-medium">Cadastro</h2>
+          <a href="{% url 'login' %}" class="link-login-cadastro" data-accounts="openLogin">
+            Login
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
         </div>
-      {% endfor %}
 
-      <button type="submit" class="login-cadastro-button button">Cadastrar</button>
-    </form>
-  
-    <form 
-      action="{% url 'login' %}"
-      method="POST"
-      class="login-content"
-      data-accounts="loginContent"
-    >
-      {% csrf_token %}
-      <div class="header-login-cadastro">
-        <h2 class="titulo titulo-medium">Login</h2>
-        <a href="{% url 'cadastro' %}" class="link-login-cadastro" data-accounts="openCadastro">
-          Cadastro
-          <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
-        </a>
-      </div>
+        {% for field in register_form %}
+          <div class="input-container" id="{{ field.id_for_label }}">
+            <label class="input-label" for="{{ field.id_for_label}}">
+              {{ field.label }}
+              <span class="texto-input-opicional">{{ field.help_text }}</span>
+            </label>
+            {{ field }}
 
-      {% for field in login_form %}
-        <div class="input-container" id="{{ field.id_for_label }}">
-          <label class="input-label" for="{{ field.id_for_label}}">
-            {{ field.label }}
-            <span class="texto-input-opicional">{{ field.help_text }}</span>
-          </label>
-          {{ field }}
-
-          {% for error in field.errors %}
-            {% if field.errors %}
-              <p class="errorlist-container">
-                <img src="{% static 'icones/icone-erro-form.svg' %}">
-                <span class="error-message">{{ error }}</span>
-              </p>
-            {% endif %}
-          {% endfor %}
-        </div>
-      {% endfor %}
-
-      <button type="submit" class="login-cadastro-button button">Entrar</button>
-
-      {% if login_form.non_field_errors %}
-        {% for error in login_form.non_field_errors %}
-          <p class="errorlist-container non-field">
-            <img src="{% static 'icones/icone-erro-form.svg' %}">
-            <span class="error-message">{{ error }}</span>
-          </p>
+            {% for error in field.errors %}
+              {% if field.errors %}
+                <p class="errorlist-container">
+                  <img src="{% static 'icones/icone-erro-form.svg' %}">
+                  <span class="error-message">{{ error }}</span>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
         {% endfor %}
-      {% endif %}
-    </form>
 
-    <button type="button" class="fechar-login-cadastro" data-accounts="close">
-      <img src="{% static 'icones/icone-fechar.svg' %}" alt="Botão de fechar">
-    </button>
+        <button type="submit" class="login-cadastro-button button">Cadastrar</button>
+      </form>
+    
+      <form 
+        action="{% url 'login' %}"
+        method="POST"
+        class="login-content"
+        data-accounts="loginContent"
+      >
+        {% csrf_token %}
+        <div class="header-login-cadastro">
+          <h2 class="titulo titulo-medium">Login</h2>
+          <a href="{% url 'cadastro' %}" class="link-login-cadastro" data-accounts="openCadastro">
+            Cadastro
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
+        </div>
+
+        {% for field in login_form %}
+          <div class="input-container" id="{{ field.id_for_label }}">
+            <label class="input-label" for="{{ field.id_for_label}}">
+              {{ field.label }}
+              <span class="texto-input-opicional">{{ field.help_text }}</span>
+            </label>
+            {{ field }}
+
+            {% for error in field.errors %}
+              {% if field.errors %}
+                <p class="errorlist-container">
+                  <img src="{% static 'icones/icone-erro-form.svg' %}">
+                  <span class="error-message">{{ error }}</span>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="login-cadastro-button button">Entrar</button>
+
+        {% if login_form.non_field_errors %}
+          {% for error in login_form.non_field_errors %}
+            <p class="errorlist-container non-field">
+              <img src="{% static 'icones/icone-erro-form.svg' %}">
+              <span class="error-message">{{ error }}</span>
+            </p>
+          {% endfor %}
+        {% endif %}
+      </form>
+
+      <button type="button" class="fechar-login-cadastro" data-accounts="close">
+        <img src="{% static 'icones/icone-fechar.svg' %}" alt="Botão de fechar">
+      </button>
+    {% endif %}
   </div>
+
+  <!-- Messages -->
+  {% if messages %}
+    <div class="messages-container">
+      {% for message in messages %}
+        <div class="message">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock %}

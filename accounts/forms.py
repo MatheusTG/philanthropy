@@ -59,11 +59,23 @@ class RegisterForm(UserCreationForm):
         'first_name',
         ValidationError(
           'O nome precisa ter pelo menos 2 caracteres.',
-          code='invalid'
+          code='invalid',
         )
       )
-    
     return first_name
+
+  def clean_email(self):
+    # Verificando se o email que está sendo cadastrado já existe
+    email = self.cleaned_data.get('email')
+    if User.objects.filter(email=email).exists():
+      self.add_error(
+        'email',
+        ValidationError(
+          'Este email já está cadastrado!',
+          code='invalid',
+        )
+      )
+    return email
 
 class LoginForm(AuthenticationForm):
   # Definindo o campo de username com um input de email,

@@ -47,4 +47,3 @@ const loginTool = new LoginCadastroTool(
   '[data-accounts="cadastroContent"]' // Content de Cadastro
 );
 loginTool.init();
-

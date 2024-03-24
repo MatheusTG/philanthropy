@@ -136,7 +136,7 @@
 
 .errorlist-container {
   display: flex;
-  align-items: start;
+  align-items: center;
   padding-top: var(--spacing-small02);
 }
 
@@ -145,12 +145,38 @@
 }
 
 .errorlist-container img {
-  margin-right: var(--spacing-small01);
+  margin-right: var(--spacing-small02);
 }
 
 .error-message {
-  font: normal 0.875rem/1 var(--font-barlow), sans-serif;
+  font: normal 0.875rem/1.5 var(--font-barlow), sans-serif;
   color: var(--color07);
+  max-width: 60ch;
+}
+
+.header-perfil {
+  position: relative;
+}
+
+.header-perfil::after {
+  content: 'Usuário cadastrado. Perfil em produção...';
+  position: absolute;
+  bottom: -80%;
+  left: 100%;
+  font: normal 0.875rem/1.5 var(--font-barlow), sans-serif;
+  width: max-content;
+  padding: var(--spacing-small01) var(--spacing-small02);
+  border-radius: var(--border-radius-small);
+  background-color: var(--color07);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.header-perfil.user-authenticated:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {
