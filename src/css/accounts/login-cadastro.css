@@ -25,7 +25,6 @@
   display: none;
   grid-template-columns: 1fr 1fr 1.5fr max-content;
   gap: var(--spacing-small05);
-  flex-wrap: wrap;
   background-color: var(--color11);
   padding: var(--spacing-medium05);
   border-radius: var(--border-radius-medium);
@@ -37,6 +36,10 @@
 .login-content.active,
 .cadastro-content.active {
   display: grid;
+}
+
+.login-cadastro-container .input-container input::placeholder {
+  color: var(--color08);
 }
 
 .header-login-cadastro {
@@ -114,6 +117,8 @@
 .login-cadastro-button {
   padding: var(--spacing-small02) var(--spacing-small04);
   align-self: end;
+  transform: translate3d(0, 27px, 0);
+  align-self: flex-start;
 }
 
 .fechar-login-cadastro {

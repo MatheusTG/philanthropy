@@ -328,7 +328,24 @@
           <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
         </a>
       </div>
-      <div class="input-container input-container-nome">
+
+      {% for field in register_form %}
+        <div class="input-container" id="{{ field.id_for_label }}">
+          <label class="input-label" for="{{ field.id_for_label}}">{{ field.label }}</label>
+          {{ field }}
+
+          {% for error in field.errors %}
+            {% if field.errors %}
+              <p class="errorlist-container">
+                <img src="{% static 'icones/icone-erro-form.svg' %}">
+                <span class="error-message">{{ error }}</span>
+              </p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      {% comment %} <div class="input-container input-container-nome">
         <label for="cadastro-nome" class="input-label">Nome</label>
         <input type="text" id="cadastro-nome" name="cadastro-nome">
       </div>
@@ -351,6 +368,7 @@
         <label for="cadastro-c-senha" class="input-label">Confirme sua senha</label>
         <input type="password" id="cadastro-c-senha" name="cadastro-c-senha">
       </div>
+      {% endcomment %}
       <button class="login-cadastro-button button">Cadastrar</button>
     </form>
   
