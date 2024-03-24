@@ -16,18 +16,3 @@
 .cadastro-content > #id_password2 {
   grid-column: 1/-2;
 }
-
-.errorlist-container {
-  display: flex;
-  align-items: start;
-  padding-top: var(--spacing-small02);
-}
-
-.errorlist-container img {
-  margin-right: var(--spacing-small01);
-}
-
-.error-message {
-  font: normal 0.875rem/1 var(--font-barlow), sans-serif;
-  color: var(--color07);
-}

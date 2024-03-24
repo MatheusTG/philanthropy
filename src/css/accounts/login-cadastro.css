@@ -133,6 +133,26 @@
   opacity: 0.6;
 }
 
+
+.errorlist-container {
+  display: flex;
+  align-items: start;
+  padding-top: var(--spacing-small02);
+}
+
+.errorlist-container.non-field {
+  grid-column: 1/-1;
+}
+
+.errorlist-container img {
+  margin-right: var(--spacing-small01);
+}
+
+.error-message {
+  font: normal 0.875rem/1 var(--font-barlow), sans-serif;
+  color: var(--color07);
+}
+
 @media (max-width: 1200px) {
   .login-cadastro-container {
     width: 60%;

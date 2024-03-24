@@ -1,7 +1,7 @@
-.login-content .input-container-email {
+.login-content > #id_username {
   grid-column: 1/-1;
 }
 
-.login-content .input-container-senha {
+.login-content >  #id_password {
   grid-column: 1/-2;
 }

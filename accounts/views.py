@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import auth
 
 from accounts.forms import RegisterForm
+from accounts.forms import LoginForm
 
 
 def cadastro_user(request):
@@ -15,15 +17,47 @@ def cadastro_user(request):
       user = register_form.save(commit=False)
       user.username = user.email
       user.save()
-
+      return redirect('home')
+    
     return render(request, 'core/home.html', context)
 
+  # Formulário base de cadastro
+  register_form = RegisterForm()
+
+  # Formulário base de login
+  login_form = LoginForm()
 
   context = {
-    'register_form': RegisterForm(),
+    'register_form': register_form,
+    'login_form': login_form,
   }
 
   return render(request, 'core/home.html', context)
 
 def login_user(request):
-  return render(request, 'core/home.html')
+  if request.method == 'POST':
+    login_form = LoginForm(request, request.POST)
+
+    context = {
+      'login_form': login_form,
+    }
+
+    if login_form.is_valid():
+      user = login_form.get_user()
+      auth.login(request, user)
+      return redirect('home')
+    
+    return render(request, 'core/home.html', context)
+
+  # Formulário base de cadastro
+  register_form = RegisterForm()
+
+  # Formulário base de login
+  login_form = LoginForm()
+
+  context = {
+    'register_form': register_form,
+    'login_form': login_form,
+  }
+
+  return render(request, 'core/home.html', context)

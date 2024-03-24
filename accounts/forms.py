@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
 
@@ -64,3 +64,15 @@ class RegisterForm(UserCreationForm):
       )
     
     return first_name
+
+class LoginForm(AuthenticationForm):
+  # Definindo o campo de username com um input de email,
+  # pois o username é na verdade o email
+  username = forms.EmailField(
+    widget=forms.EmailInput(
+      attrs={
+        'placeholder': 'email@email.com'
+      }
+    ),
+    label='E-mail'
+  )
