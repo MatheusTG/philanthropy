@@ -331,7 +331,10 @@
 
       {% for field in register_form %}
         <div class="input-container" id="{{ field.id_for_label }}">
-          <label class="input-label" for="{{ field.id_for_label}}">{{ field.label }}</label>
+          <label class="input-label" for="{{ field.id_for_label}}">
+            {{ field.label }}
+            <span class="texto-input-opicional">{{ field.help_text }}</span>
+          </label>
           {{ field }}
 
           {% for error in field.errors %}
@@ -369,7 +372,7 @@
         <input type="password" id="cadastro-c-senha" name="cadastro-c-senha">
       </div>
       {% endcomment %}
-      <button class="login-cadastro-button button">Cadastrar</button>
+      <button type="submit" class="login-cadastro-button button">Cadastrar</button>
     </form>
   
     <form 
