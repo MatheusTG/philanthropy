@@ -23,9 +23,6 @@ const menu = new Menu(
 );
 menu.init();
 
-const scrollAnima = new ScrollAnima('[data-anima="scroll"]', 'active');
-scrollAnima.init();
-
 const focusVideo = new FocusVideo(
   '[data-video-cultural]',
   '.cultural-videos-button'
@@ -47,3 +44,16 @@ const loginTool = new LoginCadastroTool(
   '[data-accounts="cadastroContent"]' // Content de Cadastro
 );
 loginTool.init();
+
+// Executa segundos após a página ser carregada
+setTimeout(() => {
+  // Adiciona animação ao scroll
+  const scrollAnima = new ScrollAnima('[data-anima="scroll"]', 'active');
+  scrollAnima.init();
+
+  // Remove as messages
+  const messagesContainer = document.querySelector('.messages-container');
+  if (messagesContainer instanceof HTMLElement) {
+    messagesContainer.style.display = 'none';
+  }
+}, 1000);

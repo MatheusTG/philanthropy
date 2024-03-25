@@ -10,7 +10,7 @@
 
     {% if user.is_authenticated %}
       <div class="header-perfil user-authenticated">
-        <a href="{% url 'login' %}">
+        <a href="/accounts/login/" data-accounts="openLogin">
           <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
         </a>
       </div>

@@ -27,7 +27,7 @@ def cadastro_user(request):
 
       messages.success(request, 'Usuário cadastrado!')
 
-      return redirect('home')
+      return redirect('login')
     
     return render(request, 'core/home.html', context)
 
