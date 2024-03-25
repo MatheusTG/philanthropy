@@ -111,6 +111,9 @@ ul {
   font-size: 2rem;
 }
 @media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
   .titulo-large {
     font-size: 3rem;
   }
@@ -160,4 +163,63 @@ ul {
 .redes img {
   width: 40px;
   cursor: pointer;
+}
+
+.input-label {
+  display: block;
+  font: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
+  margin-bottom: var(--spacing-small01);
+}
+
+.texto-input-opicional {
+  color: var(--color07);
+  font: 500 0.875rem/1.5 var(--font-barlow), sans-serif;
+  margin-left: var(--spacing-small02);
+}
+
+body.blur .header-slide-container {
+  overflow: hidden;
+  filter: blur(4px);
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.blur > *:not(.header-slide-container, .login-cadastro-container) {
+  display: none;
+}
+
+.messages-container {
+  position: absolute;
+  top: var(--spacing-medium03);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 9999;
+  animation: messageAnimation 2s forwards;
+}
+
+.message {
+  color: var(--color00);
+  background-color: var(--color-p32-02);
+  opacity: 0.6;
+  font: normal 1.125rem/1.5 var(--font-barlow), sans-serif;
+  padding: var(--spacing-small05) var(--spacing-medium03);
+  border-radius: var(--border-radius-medium);
+  border: 2px solid white;
+}
+
+@keyframes messageAnimation {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

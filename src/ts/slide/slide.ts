@@ -203,7 +203,11 @@ class Slide {
     this.addResizeEvent();
     this.setSlidePosition();
     this.transition(true);
-    this.changeSlide(3);
+
+    setTimeout(() => {
+      this.setSlidePosition();
+      this.changeSlide(3)
+    }, 1000)
 
     return this
   }

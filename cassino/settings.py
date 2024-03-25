@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pqv2maf=t-v!k@*$-yh+uc4ud&d-eauqajygl8obd-bhujc_c5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.versel.app']
 INTERNAL_IPS = ['127.0.0.1']
 
 VITE_APP_DIR = BASE_DIR
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -107,9 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 

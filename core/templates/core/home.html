@@ -106,7 +106,7 @@
     <div class="conheca-gincana-redes">
       <h2 class="titulo titulo-small">Acesse nossas redes.</h2>
       <ul class="redes">
-          <a href="https://www.instagram.com/_codebreakers_/?theme=dark" target="_blank">
+          <a href="https://www.instagram.com/cassino.m33/?theme=dark" target="_blank">
             <img src="{% static 'logo-tipos/logo-instagram.svg' %}" alt="Logo Instagram">
           </a>
         </li>
@@ -273,7 +273,7 @@
       Torne-se um
     </a>
     <ul class="lista-patrocinadores">
-      <li><img src="{% static 'patrocinadores/logo-viacao-garcia.png' %}" alt="Logo Viação Garcia"></li>
+      <!-- <li><img src="{% static 'patrocinadores/logo-viacao-garcia.png' %}" alt="Logo Viação Garcia"></li> -->
       <li><img src="{% static 'patrocinadores/logo-laura-santos.png' %}" alt="Logo Laura Santos"></li>
     </ul>
     <div class="imagem-roberto">
@@ -288,19 +288,22 @@
     </div>
     <form action="" class="formulario-contato-email">
       <div class="nome-contato-container">
-        <label for="nome-contato">Nome</label>
+        <label for="nome-contato" class="input-label">Nome</label>
         <input type="text" id="nome-contato" name="nome-nome-contato">
       </div>
       <div class="empresa-contato-container">
-        <label for="empresa-contato">Empresa<span class="texto-input-opicional">*opicional</span></label>
+        <label for="empresa-contato" class="input-label">
+          Empresa
+          <span class="texto-input-opicional">*opicional</span>
+        </label>
         <input type="text" id="empresa-contato" name="empresa-contato">
       </div>
       <div class="email-contato-container">
-        <label for="email-contato">Email</label>
+        <label for="email-contato" class="input-label">Email</label>
         <input type="email" id="email-contato" name="email-contato" placeholder="email@email.com">
       </div>
       <div class="mensagem-contato-container">
-        <label for="mensagem-contato">Mensagem</label>
+        <label for="mensagem-contato" class="input-label">Mensagem</label>
         <textarea name="mensagem-contato" id="mensagem-contato" cols="30" rows="5"></textarea>
       </div>
       <button class="button-contato button">Enviar</button>
@@ -309,4 +312,108 @@
       <img src="{% static 'backgrounds/natalia-luana.png' %}" alt="Vencedoras">
     </div>
   </section>
+
+  <div class="login-cadastro-container" data-accounts="container">
+    {% if user.is_authenticated %}
+      <div class="logout-container">
+        <a href="{% url 'logout' %}" class="button">Logout</a>
+      </div>
+    {% else %}
+      <form 
+        action="{% url 'cadastro' %}"
+        method="POST"
+        class="cadastro-content" 
+        data-accounts="cadastroContent"
+      >
+        {% csrf_token %}
+        <div class="header-login-cadastro">
+          <h2 class="titulo titulo-medium">Cadastro</h2>
+          <a href="{% url 'login' %}" class="link-login-cadastro" data-accounts="openLogin">
+            Login
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
+        </div>
+
+        {% for field in register_form %}
+          <div class="input-container" id="{{ field.id_for_label }}">
+            <label class="input-label" for="{{ field.id_for_label}}">
+              {{ field.label }}
+              <span class="texto-input-opicional">{{ field.help_text }}</span>
+            </label>
+            {{ field }}
+
+            {% for error in field.errors %}
+              {% if field.errors %}
+                <p class="errorlist-container">
+                  <img src="{% static 'icones/icone-erro-form.svg' %}">
+                  <span class="error-message">{{ error }}</span>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="login-cadastro-button button">Cadastrar</button>
+      </form>
+    
+      <form 
+        action="{% url 'login' %}"
+        method="POST"
+        class="login-content"
+        data-accounts="loginContent"
+      >
+        {% csrf_token %}
+        <div class="header-login-cadastro">
+          <h2 class="titulo titulo-medium">Login</h2>
+          <a href="{% url 'cadastro' %}" class="link-login-cadastro" data-accounts="openCadastro">
+            Cadastro
+            <img src="{% static 'icones/icone-seta03.svg' %}" alt="Seta para a direita">
+          </a>
+        </div>
+
+        {% for field in login_form %}
+          <div class="input-container" id="{{ field.id_for_label }}">
+            <label class="input-label" for="{{ field.id_for_label}}">
+              {{ field.label }}
+              <span class="texto-input-opicional">{{ field.help_text }}</span>
+            </label>
+            {{ field }}
+
+            {% for error in field.errors %}
+              {% if field.errors %}
+                <p class="errorlist-container">
+                  <img src="{% static 'icones/icone-erro-form.svg' %}">
+                  <span class="error-message">{{ error }}</span>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="login-cadastro-button button">Entrar</button>
+
+        {% if login_form.non_field_errors %}
+          {% for error in login_form.non_field_errors %}
+            <p class="errorlist-container non-field">
+              <img src="{% static 'icones/icone-erro-form.svg' %}">
+              <span class="error-message">{{ error }}</span>
+            </p>
+          {% endfor %}
+        {% endif %}
+      </form>
+
+      <button type="button" class="fechar-login-cadastro" data-accounts="close">
+        <img src="{% static 'icones/icone-fechar.svg' %}" alt="Botão de fechar">
+      </button>
+    {% endif %}
+  </div>
+
+  <!-- Messages -->
+  {% if messages %}
+    <div class="messages-container">
+      {% for message in messages %}
+        <div class="message">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
 {% endblock %}

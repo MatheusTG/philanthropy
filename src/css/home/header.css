@@ -3,6 +3,7 @@
   position: relative;
   z-index: 1;
   padding: 0%;
+  transition: 0.5s;
 }
 
 /* Códigos fundo header */
@@ -47,18 +48,19 @@
   margin-bottom: var(--spacing-small06);
 }
 
-.header-logo {
-  width: 4rem;
-}
-
-.menu-perfil-container {
+.header-menu-perfil {
   display: flex;
   align-items: center;
   gap: var(--spacing-small06);
 }
 
+.header-logo {
+  width: 4rem;
+}
+
 .header-menu,
-.header-perfil {
+.header-perfil,
+.header-podio {
   cursor: pointer;
   transition: opacity 0.1s;
 }
@@ -68,22 +70,12 @@
   opacity: 0.6;
 }
 
-.header .login-cadastro {
+.header-podio {
   margin-left: auto;
-  display: flex;
-  gap: var(--spacing-small05);
 }
 
-.header .login-cadastro a {
-  font-weight: 500;
-  font-size: 1.125rem;
-  font-family: var(--font-barlow);
-  color: var(--color05);
-  text-decoration: none;
-}
-
-.header .login-cadastro a:hover {
-  color: var(--color00);
+.header-podio:hover {
+  opacity: 0.6;
 }
 
 .header .titulo {
@@ -169,11 +161,12 @@
     display: block;
     padding: var(--spacing-small05);
   }
-  .header .menu-perfil-container {
-    margin-left: auto;
-  }
   .header-menu {
     order: 1;
+    margin-left: auto;
+  }
+  .header-podio {
+    margin-left: initial;
   }
   .header .login-cadastro {
     display: none;

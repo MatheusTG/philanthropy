@@ -21,12 +21,6 @@
   z-index: 2;
 }
 
-.contato-email-container label {
-  display: block;
-  font: 500 1.125rem/1.5 var(--font-barlow), sans-serif;
-  margin-bottom: var(--spacing-small01);
-}
-
 .contato-email-container input,
 .contato-email-container textarea {
   box-sizing: border-box;
@@ -54,12 +48,6 @@
 
 .mensagem-contato-container {
   grid-column: span 2;
-}
-
-.contato-email-container .texto-input-opicional {
-  color: var(--color07);
-  font: 500 0.875rem/1.5 var(--font-barlow), sans-serif;
-  margin-left: var(--spacing-small02);
 }
 
 .contato-email-container .button-contato {
