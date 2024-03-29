@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && python manage.py collectstatic --noinput && python manage.py runserver",
-    "preview": "vite preview",
+    "build": "tsc && vite build",
     "start": "concurrently \"python manage.py runserver\" \"vite\""
   },
   "devDependencies": {
