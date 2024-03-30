@@ -54,7 +54,7 @@
   gap: var(--spacing-small06);
 }
 
-.header-logo {
+.header-logo img {
   width: 4rem;
 }
 

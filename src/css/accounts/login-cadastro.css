@@ -133,7 +133,6 @@
   opacity: 0.6;
 }
 
-
 .errorlist-container {
   display: flex;
   align-items: center;
@@ -206,6 +205,9 @@
 }
 
 @media (max-width: 720px) {
+  .header-perfil::after {
+    display: none;
+  }
   .login-content,
   .cadastro-content {
     padding: var(--spacing-medium04) var(--spacing-medium02);
