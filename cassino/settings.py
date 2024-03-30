@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-pqv2maf=t-v!k@*$-yh+uc4ud&d-eauqajygl8obd-bhujc_c5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.versel.app', '.now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.versel.app']
 INTERNAL_IPS = ['127.0.0.1']
 
 VITE_APP_DIR = BASE_DIR

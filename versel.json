@@ -1,15 +1,13 @@
 {
-  "builds": [
-    {
+  "builds": [{
       "src": "cassino/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }
-  ],
+  }],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "cassino/wsgi.py"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "cassino/wsgi.py"
+      }
   ]
 }
