@@ -221,6 +221,23 @@
   .slide-medula .slide-button img {
     width: 24px;
   }
+  .slide-item {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--spacing-small05);
+    align-items: end;
+  }
+  .slide-item .titulo-container {
+    order: 1;
+  }
+  .slide-item .titulo-container .titulo {
+    color: var(--color07);
+    margin-bottom: 0px;
+  }
+  .slide-equipe-container,
+  .slide-utfpr {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {

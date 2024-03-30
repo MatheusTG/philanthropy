@@ -161,6 +161,9 @@
     display: block;
     padding: var(--spacing-small05);
   }
+  .menu-container {
+    justify-content: space-between;
+  }
   .header-menu {
     order: 1;
     margin-left: auto;
