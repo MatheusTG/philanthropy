@@ -1,5 +1,7 @@
+{% load static %}
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="{% static 'logo-tipos/logo-coelho.png' %}" type="img/svg+xml">
 {% if user.is_authenticated %}
   <title>Cassino - {{ user.first_name }} {{ user.last_name }}</title>
 {% else %}
