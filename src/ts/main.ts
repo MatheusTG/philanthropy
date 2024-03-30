@@ -6,6 +6,11 @@ import FocusVideo from './home/FocusVideo';
 import ProvasControls from './home/ProvasControls';
 import LoginCadastroTool from './accounts/LoginCadastroTool';
 
+import { inject } from '@vercel/analytics';
+
+// Conta os números de visitors no site
+inject();
+
 // Slides dos slide
 const slide = new SlideConfig('.slide-container', '.slide', '.slide-controls');
 slide.init();
