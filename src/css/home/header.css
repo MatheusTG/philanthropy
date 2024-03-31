@@ -70,6 +70,10 @@
   opacity: 0.6;
 }
 
+.header-menu {
+  margin-bottom: 6px;
+}
+
 .header-podio {
   margin-left: auto;
 }
@@ -161,15 +165,15 @@
     display: block;
     padding: var(--spacing-small05);
   }
-  .menu-container {
-    justify-content: space-between;
-  }
   .header-menu {
     order: 1;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
   .header-podio {
     margin-left: initial;
+  }
+  .header-perfil {
+    margin-left: auto;
   }
   .header .login-cadastro {
     display: none;

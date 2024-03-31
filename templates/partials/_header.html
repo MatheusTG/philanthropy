@@ -3,29 +3,27 @@
   <div class="header-logo">
     <a href="{% url 'home' %}"><img src="{% static 'logo-tipos/logo-coelho.png' %}" alt="Coelho Matriz"></a>
   </div>
-  <div class="header-menu-perfil">
-    <div class="header-menu" data-menu="abrir">
-      <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
-    </div>
+  <div class="header-menu" data-menu="abrir">
+    <img src="{% static 'icones/menu-humburguer.svg' %}" alt="Menu">
+  </div>
 
-    {% if user.is_authenticated %}
-      <div class="header-perfil user-authenticated">
-        <a href="/accounts/login/" data-accounts="openLogin">
-          <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
-        </a>
-      </div>
-    {% else %}
-      <div class="header-perfil">
-        <a href="{% url 'login' %}" data-accounts="openLogin">
-          <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
-        </a>
-      </div>
-    {% endif %}
-    <div class="header-podio">
-      <a href="">
-        <img src="{% static 'icones/icone-podio.svg' %}" alt="Pódio">
+  {% if user.is_authenticated %}
+    <div class="header-perfil user-authenticated">
+      <a href="/accounts/login/" data-accounts="openLogin">
+        <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
       </a>
     </div>
+  {% else %}
+    <div class="header-perfil">
+      <a href="{% url 'login' %}" data-accounts="openLogin">
+        <img src="{% static 'icones/icone-perfil.svg' %}" alt="Perfil">
+      </a>
+    </div>
+  {% endif %}
+  <div class="header-podio">
+    <a href="">
+      <img src="{% static 'icones/icone-podio.svg' %}" alt="Pódio">
+    </a>
   </div>
 </nav>
 
