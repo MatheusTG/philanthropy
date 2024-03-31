@@ -6,6 +6,7 @@
   top: 0px;
   left: -30px;
   width: 280px;
+  max-width: 65vw;
   border-right: 2px solid var(--color10);
   border-bottom: 2px solid var(--color10);
   padding: var(--spacing-small05);
@@ -13,7 +14,7 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.5s;
-  border-radius: 0px 0px var(--border-radius-small) 0px;
+  border-bottom-right-radius: var(--border-radius-small);
 }
 
 .menu.active {
@@ -103,6 +104,10 @@
   .menu {
     left: initial;
     right: -30px;
+    border-right: none;
+    border-bottom: none;
+    border-bottom-right-radius: none;
+    border-bottom-left-radius: var(--border-radius-small);
   }
   .menu.menu.active {
     left: initial;
