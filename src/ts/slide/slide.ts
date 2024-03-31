@@ -146,9 +146,11 @@ class Slide {
     const eventType = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
     this.container?.removeEventListener(eventType, this.onMove);
 
+    const mouseMovement = window.innerWidth > 720 ? 120 : 60
+
     if (this.dataSlideMove.movement > 10 || this.dataSlideMove.movement < -10) {
-      if (this.dataSlideMove.movement > 120) this.prev();
-      else if (this.dataSlideMove.movement < -120) this.next();
+      if (this.dataSlideMove.movement > mouseMovement) this.prev();
+      else if (this.dataSlideMove.movement < mouseMovement * -1) this.next();
       else this.changeSlide(this.index.active);
 
       this.dataSlideMove.movement = 0;
@@ -206,10 +208,10 @@ class Slide {
 
     setTimeout(() => {
       this.setSlidePosition();
-      this.changeSlide(3)
-    }, 1000)
+      this.changeSlide(3);
+    }, 1000);
 
-    return this
+    return this;
   }
 }
 
@@ -257,7 +259,7 @@ export default class SlideConfig extends Slide {
   addControlEvent() {
     this.controls?.forEach((control) => {
       control.addEventListener('click', this.onClickControl);
-      control.addEventListener('touchstart', this.onClickControl);
+      control.addEventListener('touch', this.onClickControl);
     });
   }
 

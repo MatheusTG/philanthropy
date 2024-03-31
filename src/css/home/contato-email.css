@@ -89,7 +89,7 @@
 
 @media (max-width: 720px) {
   .contato-email-container {
-    padding: var(--spacing-large01) var(--spacing-small05);
+    padding: var(--spacing-medium05) var(--spacing-small05);
   }
 }
 

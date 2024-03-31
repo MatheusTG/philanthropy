@@ -154,6 +154,10 @@ ul {
   background-color: rgba(9, 122, 7, 0.4);
 }
 
+.button img {
+  width: 2.5rem;
+}
+
 .redes {
   display: flex;
   align-items: center;
