@@ -61,4 +61,4 @@ setTimeout(() => {
   if (messagesContainer instanceof HTMLElement) {
     messagesContainer.style.display = 'none';
   }
-}, 1000);
+}, 1500);
