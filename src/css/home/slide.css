@@ -166,6 +166,10 @@
   background-image: url('../../img/slide/slide-alimento.jpg');
 }
 
+.slide-racao::before {
+  background-image: url('../../img/slide/slide-racao.jpg');
+}
+
 .slide-lacres::before {
   background-image: url('../../img/slide/slide-lacres.jpg');
 }
