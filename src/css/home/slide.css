@@ -242,6 +242,10 @@
   .slide-utfpr {
     display: none;
   }
+  .slide-cabelo,
+  .icone-cabelo {
+    display: none !important;
+  }
 }
 
 @media (max-width: 600px) {
