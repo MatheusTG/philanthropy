@@ -56,7 +56,9 @@
 }
 
 .mapa-site a {
-  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  font:
+    500 1rem/1.5 var(--font-barlow),
+    sans-serif;
   color: var(--color03);
   text-decoration: none;
   cursor: pointer;
@@ -115,7 +117,9 @@
 
 .copy .copyright,
 .copy .localizacao-utfpr {
-  font: 500 1rem/1.5 var(--font-barlow), sans-serif;
+  font:
+    500 1rem/1.5 var(--font-barlow),
+    sans-serif;
   color: var(--color00);
 }
 
@@ -146,7 +150,9 @@
   align-items: center;
   display: flex;
   gap: var(--spacing-small02);
-  font: 500 1rem/1.5 var(--font-IBM), sans-serif;
+  font:
+    500 1rem/1.5 var(--font-IBM),
+    sans-serif;
   color: var(--color04);
   letter-spacing: 0.5px;
 }
