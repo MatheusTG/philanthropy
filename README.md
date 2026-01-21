@@ -44,6 +44,8 @@ The visual design and interface prototypes for this project were created in Figm
 
 ## 🎬 Demo
 
+https://github.com/user-attachments/assets/20413b3f-b518-4944-bd41-a3140d19c8c3
+
 ---
 
 ## 📋 Requirements
