@@ -44,6 +44,7 @@ env/
 .python-version
 .pyenv
 pip-wheel-metadata/
+.env
 
 # Django
 *.sqlite3
